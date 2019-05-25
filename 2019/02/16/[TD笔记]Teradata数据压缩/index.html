@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="ETL,Talend,">
+  <meta name="keywords" content="Teradata,">
 
 
 
@@ -86,18 +86,18 @@
 
 
 
-<meta name="description" content="前言和Talend这款软件打交道有一段时间了，主要用它来做一些ETL相关的作业开发，以下总结了一些自己配置与开发过程中的最佳实践。 最佳实践 可以通过修改Talend Studio 的 .ini 配置文件来给其分配更多的内存，例如，以下是我在64位8GB内存的电脑配置的参数  -vmargs  -Xms2014m  -Xmx4096m  -XX:MaxPermSize=512m  -Dfile.e">
-<meta name="keywords" content="ETL,Talend">
+<meta name="description" content="工作上需要研究Teradata CLOB类型，因为去看了官方文档，自己做了点笔记如下： Teradata数据压缩概况本章描述了几种数据压缩选项，它能够帮助你减少磁盘空间的使用，在某种情况下，还可以提高I/O性能。  多值压缩（MVC) 算法压缩（ALC） 行压缩 行标题压缩 自动压缩 哈希索引和连接索引行压缩 块级压缩（BLC)   压缩的目标是利用最少的位数(bits)来准确的表示信息。 压缩方">
+<meta name="keywords" content="Teradata">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ETL工具Talend最佳实践">
-<meta property="og:url" content="http://yoursite.com/2019/03/01/ETL工具Talend最佳实践/index.html">
+<meta property="og:title" content="TD笔记 | Teradata数据压缩">
+<meta property="og:url" content="http://yoursite.com/2019/02/16/[TD笔记]Teradata数据压缩/index.html">
 <meta property="og:site_name" content="Lestat.Z">
-<meta property="og:description" content="前言和Talend这款软件打交道有一段时间了，主要用它来做一些ETL相关的作业开发，以下总结了一些自己配置与开发过程中的最佳实践。 最佳实践 可以通过修改Talend Studio 的 .ini 配置文件来给其分配更多的内存，例如，以下是我在64位8GB内存的电脑配置的参数  -vmargs  -Xms2014m  -Xmx4096m  -XX:MaxPermSize=512m  -Dfile.e">
+<meta property="og:description" content="工作上需要研究Teradata CLOB类型，因为去看了官方文档，自己做了点笔记如下： Teradata数据压缩概况本章描述了几种数据压缩选项，它能够帮助你减少磁盘空间的使用，在某种情况下，还可以提高I/O性能。  多值压缩（MVC) 算法压缩（ALC） 行压缩 行标题压缩 自动压缩 哈希索引和连接索引行压缩 块级压缩（BLC)   压缩的目标是利用最少的位数(bits)来准确的表示信息。 压缩方">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-01T11:37:39.000Z">
+<meta property="og:updated_time" content="2019-02-16T03:59:10.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ETL工具Talend最佳实践">
-<meta name="twitter:description" content="前言和Talend这款软件打交道有一段时间了，主要用它来做一些ETL相关的作业开发，以下总结了一些自己配置与开发过程中的最佳实践。 最佳实践 可以通过修改Talend Studio 的 .ini 配置文件来给其分配更多的内存，例如，以下是我在64位8GB内存的电脑配置的参数  -vmargs  -Xms2014m  -Xmx4096m  -XX:MaxPermSize=512m  -Dfile.e">
+<meta name="twitter:title" content="TD笔记 | Teradata数据压缩">
+<meta name="twitter:description" content="工作上需要研究Teradata CLOB类型，因为去看了官方文档，自己做了点笔记如下： Teradata数据压缩概况本章描述了几种数据压缩选项，它能够帮助你减少磁盘空间的使用，在某种情况下，还可以提高I/O性能。  多值压缩（MVC) 算法压缩（ALC） 行压缩 行标题压缩 自动压缩 哈希索引和连接索引行压缩 块级压缩（BLC)   压缩的目标是利用最少的位数(bits)来准确的表示信息。 压缩方">
 
 
 
@@ -127,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/01/ETL工具Talend最佳实践/">
+  <link rel="canonical" href="http://yoursite.com/2019/02/16/[TD笔记]Teradata数据压缩/">
 
 
 
 
 
-  <title>ETL工具Talend最佳实践 | Lestat.Z</title>
+  <title>TD笔记 | Teradata数据压缩 | Lestat.Z</title>
   
 
 
@@ -312,7 +312,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/01/ETL工具Talend最佳实践/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/16/[TD笔记]Teradata数据压缩/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lestat Zhang">
@@ -329,7 +329,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ETL工具Talend最佳实践</h1>
+          <h1 class="post-title" itemprop="name headline">TD笔记 | Teradata数据压缩</h1>
         
 
         <div class="post-meta">
@@ -341,8 +341,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-01T19:37:39+08:00">
-                2019-03-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-16T11:59:10+08:00">
+                2019-02-16
               </time>
             
 
@@ -352,6 +352,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/DWH/" itemprop="url" rel="index">
+                    <span itemprop="name">DWH</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -360,8 +382,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/03/01/ETL工具Talend最佳实践/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/01/ETL工具Talend最佳实践/" itemprop="commentCount"></span>
+                <a href="/2019/02/16/[TD笔记]Teradata数据压缩/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/16/[TD笔记]Teradata数据压缩/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -369,7 +391,7 @@
 
           
           
-             <span id="/2019/03/01/ETL工具Talend最佳实践/" class="leancloud_visitors" data-flag-title="ETL工具Talend最佳实践">
+             <span id="/2019/02/16/[TD笔记]Teradata数据压缩/" class="leancloud_visitors" data-flag-title="TD笔记 | Teradata数据压缩">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -394,7 +416,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  446
+                  586
                 </span>
               
 
@@ -410,7 +432,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -431,35 +453,37 @@
       
 
       
-        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>和Talend这款软件打交道有一段时间了，主要用它来做一些ETL相关的作业开发，以下总结了一些自己配置与开发过程中的最佳实践。</p>
-<h4 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h4><ol>
-<li><p>可以通过修改Talend Studio 的 <strong>.ini</strong> 配置文件来给其分配更多的内存，例如，以下是我在64位8GB内存的电脑配置的参数</p>
-<table><tr><td align="left">
--vmargs <br>
--Xms2014m <br>
--Xmx4096m <br>
--XX:MaxPermSize=512m <br>
--Dfile.encoding=UTF-8 <br>
-</td></tr></table>
-</li>
-<li><p>在开发过程中一定要注意对Null值得处理</p>
-</li>
-<li>可以创建Repository Metadata用于数据库连接</li>
-<li>可以使用 ==t\<db>== 的数据连接组件定义数据库连接，并重复使用。</db></li>
-<li>记得使用 ==t\<db>== 组件来关闭数据库连接</db></li>
-<li>避免在Talend的组件中在使用硬编码值(hard coding)，使用Talend context 变量代替</li>
-<li>尽可能使用变量代替硬编码</li>
-<li>对于频繁的变换，可以通过创建routines或者functions来减少工作量</li>
-<li>每次关机前记得保存并关闭Talend Studio！！！</li>
-<li>尽可能早的使用tFilterColumns组件过滤去不需要的字段/列</li>
-<li>尽可能早的使用tFilterRows组件过滤去不需要的数据</li>
-<li>使用Select列表达式从数据库获取数据，尽量避免获取不需要的字段</li>
-<li>当作业出现OOM错误时，调整JVM的参数，例如修改Xms和Xmx来分配更多的内存</li>
-<li>通过使用并行化选项来提高作业性能，减少整体的运行时间，如并行化从数据读写数据等</li>
-<li>给Main job起一个有意义的名字</li>
-<li>在定义Sub job时，务必第一时间记录子作业的标题、描述和目的。</li>
-<li>在设计作业尽可能将复杂的作业切割成一个个小作业</li>
-</ol>
+        <p>工作上需要研究Teradata CLOB类型，因为去看了官方文档，自己做了点笔记如下：</p>
+<h3 id="Teradata数据压缩"><a href="#Teradata数据压缩" class="headerlink" title="Teradata数据压缩"></a>Teradata数据压缩</h3><h4 id="概况"><a href="#概况" class="headerlink" title="概况"></a>概况</h4><p>本章描述了几种数据压缩选项，它能够帮助你减少磁盘空间的使用，在某种情况下，还可以提高I/O性能。</p>
+<ul>
+<li>多值压缩（MVC)</li>
+<li>算法压缩（ALC）</li>
+<li>行压缩</li>
+<li>行标题压缩</li>
+<li>自动压缩</li>
+<li>哈希索引和连接索引行压缩</li>
+<li>块级压缩（BLC) </li>
+</ul>
+<p>压缩的目标是利用最少的位数(bits)来准确的表示信息。
+压缩方法可分为物理方法和逻辑方法。
+物理方法独立于数据本身意义对其进行重新编码， 而逻辑方法则通过一个更紧凑的集合来替换。</p>
+<p>压缩通过在单位物理容量中存储更多的逻辑数据来降低存储成本。压缩产生更小的行，因此每个可以数据块存储更多行以减少数据块数量。</p>
+<p>压缩还可以提高系统性能，因为每个查询返回更少的物理数据，同时压缩过的数据在内存中保持压缩状态，因此FSG[1]缓存可容纳更多行，从而减少磁盘I/O的大小。</p>
+<p>[1]FSG cache: File Segment cache, a Teradata caching approach.</p>
+<p>算法压缩可以是有损或者是无损的，这取决于所选用的的算法。</p>
+<p>TD的压缩一个很小的初始成本，但是即使对于小表的查询，主要选择的压缩方法能过减小表的大小，这就是一个净赢。</p>
+<h4 id="块级压缩"><a href="#块级压缩" class="headerlink" title="块级压缩"></a>块级压缩</h4><p>数据块是I/O基本物理单位，用于定义TD如何处理数据。
+当你指定了块级压缩选项，TD将以压缩格式存储数据来减少存储空间。</p>
+<p>BLC可以应用到这几种类型的表：</p>
+<ul>
+<li>主要数据，回退，甚至是无法重新启动的表</li>
+</ul>
+<p>BLC还可以应用于这几种类型的子表：</p>
+<ul>
+<li>BLOB, CLOB, XML, JOIN INDEX, HASH INDEX和Reference index.</li>
+</ul>
+<p>BLC独立应用于其他任何应用于相同数据的压缩类型。
+BLC可以使用更多的CPU来动态压缩和解压数据，所以查询性能是否随BLC而增强取决于性能是否受I/O带宽或CPU使用率的限制。</p>
 
       
     </div>
@@ -477,9 +501,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/ETL/" rel="tag"><i class="fa fa-tag"></i> ETL</a>
-          
-            <a href="/tags/Talend/" rel="tag"><i class="fa fa-tag"></i> Talend</a>
+            <a href="/tags/Teradata/" rel="tag"><i class="fa fa-tag"></i> Teradata</a>
           
         </div>
       
@@ -492,18 +514,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/01/Spark中RDD、DataFrame和DataSet的区别/" rel="next" title="Spark中RDD、DataFrame和DataSet的区别">
-                <i class="fa fa-chevron-left"></i> Spark中RDD、DataFrame和DataSet的区别
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/17/关于Spark Dataset API中的Typed transformations和Untyped transformations/" rel="prev" title="关于Spark Dataset API中的Typed transformations和Untyped transformations">
-                关于Spark Dataset API中的Typed transformations和Untyped transformations <i class="fa fa-chevron-right"></i>
+              <a href="/2019/02/16/Mac上解决访问github慢问题/" rel="prev" title="Mac上解决访问github慢问题">
+                Mac上解决访问github慢问题 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -657,7 +675,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#最佳实践"><span class="nav-number">2.</span> <span class="nav-text">最佳实践</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Teradata数据压缩"><span class="nav-number">1.</span> <span class="nav-text">Teradata数据压缩</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#概况"><span class="nav-number">1.1.</span> <span class="nav-text">概况</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#块级压缩"><span class="nav-number">1.2.</span> <span class="nav-text">块级压缩</span></a></li></ol></li></ol></div>
             
 
           </div>
