@@ -91,7 +91,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/02/17/Mac共享主机网络给虚拟机/20190216110149123.png">
 <meta property="og:image" content="http://yoursite.com/2019/02/17/Mac共享主机网络给虚拟机/20190216112753690.png">
 <meta property="og:image" content="http://yoursite.com/2019/02/17/Mac共享主机网络给虚拟机/20190216113314497.png">
-<meta property="og:updated_time" content="2019-05-25T03:03:42.000Z">
+<meta property="og:updated_time" content="2019-05-25T07:40:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac共享主机网络给虚拟机">
 <meta name="twitter:description" content="因工作需要需要且身边没有windows系统的笔记本，无奈只好在mac上利用虚拟机安装一个win7系统作为临时过渡。我使用的虚拟机软件是Parallels Desktop（以下简称PD）PD提供三种不同网络模式供用户选择:  共享网络（推荐） 桥接网络 Host-Only网络  各种网络模式的区别请移步官方文档 一开始我并没有任何设置，直接使用默认的共享网络模式，使用过程中出现了有时候连得上有时候连">
@@ -226,6 +226,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-favorite">
+          <a href="/favorite/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heart"></i> <br>
+            
+            favorite
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
@@ -309,8 +319,6 @@
 
           
 
-          
-            
           
 
           
@@ -422,10 +430,6 @@
 
           
 
-  
-
-
-
         </div>
         
           
@@ -491,6 +495,12 @@
                     <a href="https://github.com/lestatzhang" target="_blank" title="GitHub">
                       
                         <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://blog.csdn.net/yolohohohoho" target="_blank" title="CSDN">
+                      
+                        <i class="fa fa-fw fa-csdn"></i>CSDN</a>
                   </span>
                 
             </div>
@@ -689,6 +699,28 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '1XzJIvxxwpFlR5Qycyur5GwD-gzGzoHsz',
+        appKey: 'pfAVubFdUz2rvJs788J9uOiR',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 

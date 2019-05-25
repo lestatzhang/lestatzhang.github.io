@@ -221,6 +221,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-favorite">
+          <a href="/favorite/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heart"></i> <br>
+            
+            favorite
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
@@ -305,6 +315,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/02/16/Mac上解决访问github慢问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/16/Mac上解决访问github慢问题/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -408,6 +428,9 @@
           
 
   
+    <div class="comments" id="comments">
+    </div>
+  
 
 
 
@@ -476,6 +499,12 @@
                     <a href="https://github.com/lestatzhang" target="_blank" title="GitHub">
                       
                         <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://blog.csdn.net/yolohohohoho" target="_blank" title="CSDN">
+                      
+                        <i class="fa fa-fw fa-csdn"></i>CSDN</a>
                   </span>
                 
             </div>
@@ -674,6 +703,28 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '1XzJIvxxwpFlR5Qycyur5GwD-gzGzoHsz',
+        appKey: 'pfAVubFdUz2rvJs788J9uOiR',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 
