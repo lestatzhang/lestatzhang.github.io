@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Spark,Parallelism,Tuning,">
 
 
 
@@ -86,16 +86,18 @@
 
 
 
-<meta name="description" content="You Know Nothing.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Lestat.Z">
-<meta property="og:url" content="http://yoursite.com/tags/Scala/index.html">
+<meta name="description" content="在关于spark任务并行度的设置中，有两个参数我们会经常遇到，spark.sql.shuffle.partitions 和 spark.default.parallelism, 那么这两个参数到底有什么区别的？ 首先，让我们来看下它们的定义    Property Name Default Meaning     spark.sql.shuffle.partitions 200 Configure">
+<meta name="keywords" content="Spark,Parallelism,Tuning">
+<meta property="og:type" content="article">
+<meta property="og:title" content="spark.sql.shuffle.partitions 和 spark.default.parallelism 的区别">
+<meta property="og:url" content="http://yoursite.com/2019/02/27/spark.sql.shuffle.partitions 和 spark.default.parallelism 的区别/index.html">
 <meta property="og:site_name" content="Lestat.Z">
-<meta property="og:description" content="You Know Nothing.">
+<meta property="og:description" content="在关于spark任务并行度的设置中，有两个参数我们会经常遇到，spark.sql.shuffle.partitions 和 spark.default.parallelism, 那么这两个参数到底有什么区别的？ 首先，让我们来看下它们的定义    Property Name Default Meaning     spark.sql.shuffle.partitions 200 Configure">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-02-27T02:30:03.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Lestat.Z">
-<meta name="twitter:description" content="You Know Nothing.">
+<meta name="twitter:title" content="spark.sql.shuffle.partitions 和 spark.default.parallelism 的区别">
+<meta name="twitter:description" content="在关于spark任务并行度的设置中，有两个参数我们会经常遇到，spark.sql.shuffle.partitions 和 spark.default.parallelism, 那么这两个参数到底有什么区别的？ 首先，让我们来看下它们的定义    Property Name Default Meaning     spark.sql.shuffle.partitions 200 Configure">
 
 
 
@@ -125,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/Scala/">
+  <link rel="canonical" href="http://yoursite.com/2019/02/27/spark.sql.shuffle.partitions 和 spark.default.parallelism 的区别/">
 
 
 
 
 
-  <title>标签: Scala | Lestat.Z</title>
+  <title>spark.sql.shuffle.partitions 和 spark.default.parallelism 的区别 | Lestat.Z</title>
   
 
 
@@ -150,7 +152,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -296,52 +298,237 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>Scala<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/27/spark.sql.shuffle.partitions 和 spark.default.parallelism 的区别/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lestat Zhang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lestat.Z">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/02/18/why-use-scala-udf/" itemprop="url">
-              
-                <span itemprop="name">为什么建议在Spark中使用Scala定义UDF</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">spark.sql.shuffle.partitions 和 spark.default.parallelism 的区别</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-18T22:34:39+08:00" content="2019-02-18">
-          02-18
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-27T10:30:03+08:00">
+                2019-02-27
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/02/27/spark.sql.shuffle.partitions 和 spark.default.parallelism 的区别/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/27/spark.sql.shuffle.partitions 和 spark.default.parallelism 的区别/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/02/27/spark.sql.shuffle.partitions 和 spark.default.parallelism 的区别/" class="leancloud_visitors" data-flag-title="spark.sql.shuffle.partitions 和 spark.default.parallelism 的区别">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  259
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在关于spark任务并行度的设置中，有两个参数我们会经常遇到，spark.sql.shuffle.partitions 和 spark.default.parallelism, 那么这两个参数到底有什么区别的？</p>
+<p>首先，让我们来看下它们的定义</p>
+<table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>spark.sql.shuffle.partitions</td>
+<td>200</td>
+<td align="left" width="200">Configures the number of partitions to use when shuffling data for <b>joins</b> or <b>aggregations</b>.</td>
+</tr>
+<tr>
+<td>spark.default.parallelism</td>
+<td align="left">For distributed shuffle operations like <strong>reduceByKey</strong> and <strong>join</strong>, the largest number of partitions in a parent RDD. <br><br>For operations like parallelize with no parent RDDs, it depends on the cluster manager: <br> <b>- Local mode:</b> number of cores on the local machine <br> <b>- Mesos fine grained mode</b>: 8 <br><b>- Others:</b> total number of cores on all executor nodes or 2, whichever is larger</td>
+<td align="left">Default number of partitions in RDDs returned by transformations like <b>join</b>, <b>reduceByKey</b>, and parallelize when not set by user.</td>
+</tr>
+</tbody>
+</table>
+
+<p>看起来它们的定义似乎也很相似，但在实际测试中，</p>
+<ul>
+<li>spark.default.parallelism只有在处理RDD时才会起作用，对Spark SQL的无效。</li>
+<li>spark.sql.shuffle.partitions则是对sparks SQL专用的设置</li>
+</ul>
+<p>我们可以在提交作业的通过 <code>--conf</code> 来修改这两个设置的值，方法如下：
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spark-submit --conf spark.sql.shuffle.partitions=20 --conf spark.default.parallelism=20</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Spark/" rel="tag"><i class="fa fa-tag"></i> Spark</a>
+          
+            <a href="/tags/Parallelism/" rel="tag"><i class="fa fa-tag"></i> Parallelism</a>
+          
+            <a href="/tags/Tuning/" rel="tag"><i class="fa fa-tag"></i> Tuning</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/18/why-use-scala-udf/" rel="next" title="为什么建议在Spark中使用Scala定义UDF">
+                <i class="fa fa-chevron-left"></i> 为什么建议在Spark中使用Scala定义UDF
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/01/ETL工具Talend最佳实践/" rel="prev" title="ETL工具Talend最佳实践">
+                ETL工具Talend最佳实践 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -349,6 +536,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -582,6 +776,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
