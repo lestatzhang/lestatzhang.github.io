@@ -4,19 +4,6 @@
   
     
     <entry>
-      <title></title>
-      <link href="/2019/05/28/%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%E7%AE%80%E4%BB%8B%E5%B0%8F%E7%BB%93/"/>
-      <url>/2019/05/28/%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%E7%AE%80%E4%BB%8B%E5%B0%8F%E7%BB%93/</url>
-      
-        <content type="html"><![CDATA[<hr><p>title: 数据仓库笔记 —— 数据仓库简介小结date: 2017-12-15 20:34:45updated: 2017-12-15 20:34:45tags: DWHcategory: </p><h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><ol><li>数据仓库是一个<strong>面向主题的、集成的、随时间变化的、非易失的</strong>数据集合，用于支持管理者的决策过程。 </li><li>数据仓库中的粒度是指数据的细节或汇总程度，细节程度越高，粒度级别越低。</li><li>数据仓库的数据来自各个业务应用系统。 </li><li>很多因素导致直接访问业务系统无法进行全局数据分析的工作，这也是需要一个数据仓库的原因所在。 </li><li>操作型系统是一类专门用于<strong>管理面向事务</strong>的应用信息系统，而分析型系统是一种<strong>快速回答多维分析查询</strong>的实现方式，两者在很多方面存在差异。</li><li>构成数据仓库系统的主要组成部分有数据源、<strong>ODS</strong>、中心数据仓库、分析查询引擎、ETL、元数据管理和自动化调度。 </li><li>主要的数据仓库架构有独立数据集市、从属数据集市、Inmon企业信息工厂、Kimball多维数据仓库、混合型数据仓库。 </li><li>ETL是建立数据仓库最重要的处理过程，也是最体现工作量的环节。</li><li>Kettle是常用的开源ETL工具，现在还有Talend等比较常用的ETL工具。</li><li>数据仓库的基本需求是安全性、可访问性、自动化，对数据的要求是准确性、时效性、历史可追溯性。</li></ol><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p>[Book]Hadoop构建数据仓库实践, 第1章第6节 —— 小结</p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Mac上如何使用SSH连接到GitHub</title>
       <link href="/2019/05/26/Mac%E4%B8%8A%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8SSH%E8%BF%9E%E6%8E%A5%E5%88%B0GitHub/"/>
       <url>/2019/05/26/Mac%E4%B8%8A%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8SSH%E8%BF%9E%E6%8E%A5%E5%88%B0GitHub/</url>
@@ -399,6 +386,31 @@
         <tags>
             
             <tag> Teradata </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>数据仓库笔记 —— 数据仓库简介小结</title>
+      <link href="/2017/12/15/%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%E7%AE%80%E4%BB%8B%E5%B0%8F%E7%BB%93/"/>
+      <url>/2017/12/15/%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%E7%AE%80%E4%BB%8B%E5%B0%8F%E7%BB%93/</url>
+      
+        <content type="html"><![CDATA[<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><ol><li>数据仓库是一个<strong>面向主题的、集成的、随时间变化的、非易失的</strong>数据集合，用于支持管理者的决策过程。 </li><li>数据仓库中的粒度是指数据的细节或汇总程度，细节程度越高，粒度级别越低。</li><li>数据仓库的数据来自各个业务应用系统。 </li><li>很多因素导致直接访问业务系统无法进行全局数据分析的工作，这也是需要一个数据仓库的原因所在。 </li><li>操作型系统是一类专门用于<strong>管理面向事务</strong>的应用信息系统，而分析型系统是一种<strong>快速回答多维分析查询</strong>的实现方式，两者在很多方面存在差异。</li><li>构成数据仓库系统的主要组成部分有数据源、<strong>ODS</strong>、中心数据仓库、分析查询引擎、ETL、元数据管理和自动化调度。 </li><li>主要的数据仓库架构有独立数据集市、从属数据集市、Inmon企业信息工厂、Kimball多维数据仓库、混合型数据仓库。 </li><li>ETL是建立数据仓库最重要的处理过程，也是最体现工作量的环节。</li><li>Kettle是常用的开源ETL工具，现在还有Talend等比较常用的ETL工具。</li><li>数据仓库的基本需求是安全性、可访问性、自动化，对数据的要求是准确性、时效性、历史可追溯性。</li></ol><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p>[Book]Hadoop构建数据仓库实践, 第1章第6节 —— 小结</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> DWH </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> DWH </tag>
             
         </tags>
       
