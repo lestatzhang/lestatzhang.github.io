@@ -92,7 +92,7 @@
 <meta name="keywords" content="shell,sendmail">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用sendmail发送邮件及附件">
-<meta property="og:url" content="http://yoursite.com/2019/02/27/使用sendmail命令发送附件/index.html">
+<meta property="og:url" content="https://lestatzhang.com/2019/02/27/使用sendmail命令发送附件/index.html">
 <meta property="og:site_name" content="Lestat.Z">
 <meta property="og:description" content="在自动化中经常需要将日志文件发送到指定用户组，于是记录一下使用sendmail发送邮件及附件的shell脚本模板 12345678910111213141516171819202122232425262728293031323334#!/bin/bashMAILFROM=&quot;noreply@`hostname -f`&quot;MAILTO=&quot;mail.to@hotmail.com&quot;SUBJECT=&quot;Send">
 <meta property="og:locale" content="zh-Hans">
@@ -129,7 +129,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/02/27/使用sendmail命令发送附件/">
+  <link rel="canonical" href="https://lestatzhang.com/2019/02/27/使用sendmail命令发送附件/">
 
 
 
@@ -314,7 +314,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/27/使用sendmail命令发送附件/">
+    <link itemprop="mainEntityOfPage" href="https://lestatzhang.com/2019/02/27/使用sendmail命令发送附件/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lestat Zhang">
@@ -457,6 +457,7 @@
       
         <p>在自动化中经常需要将日志文件发送到指定用户组，于是记录一下使用sendmail发送邮件及附件的shell脚本模板</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>!/bin/bash</span><br><span class="line">MAILFROM="noreply@`hostname -f`"</span><br><span class="line">MAILTO="mail.to@hotmail.com"</span><br><span class="line">SUBJECT="Sendmail templete test"</span><br><span class="line">ATTACHMENT="XXXXXXX20190227.log"</span><br><span class="line">MAILPART=`uuidgen` ## Generates Unique ID as boundary</span><br><span class="line">MAILPART_BODY=`uuidgen` ## Generates Unique ID as boundary</span><br><span class="line"></span><br><span class="line">(</span><br><span class="line"> echo "From: $MAILFROM"</span><br><span class="line"> echo "To: $MAILTO"</span><br><span class="line"> echo "Subject: $SUBJECT"</span><br><span class="line"> echo "MIME-Version: 1.0"</span><br><span class="line"> echo "Content-Type: multipart/mixed; boundary=\"$MAILPART\""</span><br><span class="line"> echo ""</span><br><span class="line"> echo "--$MAILPART"</span><br><span class="line"> echo "Content-Type: multipart/alternative; boundary=\"$MAILPART_BODY\""</span><br><span class="line"> echo ""</span><br><span class="line"> echo "--$MAILPART_BODY"</span><br><span class="line"> echo "Content-Type: text/plain; charset=UTF-8"</span><br><span class="line"> echo "This is TEXT part and below is HTML part"</span><br><span class="line"> echo "--$MAILPART_BODY"</span><br><span class="line"> echo "Content-Type: text/html; charset=UTF-8"</span><br><span class="line"> echo ""</span><br><span class="line"> echo "&lt;html&gt;&lt;body&gt;&lt;div&gt;THIS IS HTML PART&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;"</span><br><span class="line"> echo "--$MAILPART_BODY--"</span><br><span class="line"></span><br><span class="line"> echo "--$MAILPART"</span><br><span class="line"> echo 'Content-Type: text/plain; name="'$(basename $ATTACHMENT)'"'</span><br><span class="line"> echo "Content-Transfer-Encoding: base64"</span><br><span class="line"> echo ""</span><br><span class="line"> openssl base64 &lt; $ATTACHMENT;</span><br><span class="line"> echo "--$MAILPART--"</span><br><span class="line">)  | sendmail -t</span><br></pre></td></tr></table></figure>
+
 
       
     </div>

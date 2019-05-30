@@ -88,18 +88,18 @@
 
 
 
-<meta name="description" content="什么是ObjectIdObjectId是MongoDB文档的默认主键，通常位于插入文档的_id字段中。例如： 123&amp;#123;    &quot;_id&quot;: ObjectId(&quot;507f1f77bcf86cd799439011&quot;)&amp;#125; ObjectId是一个12字节的二进制BSON类型字符串， 由以下几部分构成：  1-4字节：UNIX时间戳 5-7字节：表示运行MongoDB的机器 8-9字节：">
+<meta name="description" content="什么是ObjectIdObjectId是MongoDB文档的默认主键，通常位于插入文档的_id字段中。例如： 123&amp;#123;    &quot;_id&quot;: ObjectId(&quot;507f1f77bcf86cd799439011&quot;)&amp;#125;  ObjectId是一个12字节的二进制BSON类型字符串， 由以下几部分构成：  1-4字节：UNIX时间戳 5-7字节：表示运行MongoDB的机器 8-9字节">
 <meta name="keywords" content="mongodb">
 <meta property="og:type" content="article">
 <meta property="og:title" content="将时间戳(timestamp)转换为MongoDB中的ObjectId">
-<meta property="og:url" content="http://yoursite.com/2019/02/25/将时间戳(timestamp)转换为MongoDB中的ObjectId/index.html">
+<meta property="og:url" content="https://lestatzhang.com/2019/02/25/将时间戳(timestamp)转换为MongoDB中的ObjectId/index.html">
 <meta property="og:site_name" content="Lestat.Z">
-<meta property="og:description" content="什么是ObjectIdObjectId是MongoDB文档的默认主键，通常位于插入文档的_id字段中。例如： 123&amp;#123;    &quot;_id&quot;: ObjectId(&quot;507f1f77bcf86cd799439011&quot;)&amp;#125; ObjectId是一个12字节的二进制BSON类型字符串， 由以下几部分构成：  1-4字节：UNIX时间戳 5-7字节：表示运行MongoDB的机器 8-9字节：">
+<meta property="og:description" content="什么是ObjectIdObjectId是MongoDB文档的默认主键，通常位于插入文档的_id字段中。例如： 123&amp;#123;    &quot;_id&quot;: ObjectId(&quot;507f1f77bcf86cd799439011&quot;)&amp;#125;  ObjectId是一个12字节的二进制BSON类型字符串， 由以下几部分构成：  1-4字节：UNIX时间戳 5-7字节：表示运行MongoDB的机器 8-9字节">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-02-25T11:47:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="将时间戳(timestamp)转换为MongoDB中的ObjectId">
-<meta name="twitter:description" content="什么是ObjectIdObjectId是MongoDB文档的默认主键，通常位于插入文档的_id字段中。例如： 123&amp;#123;    &quot;_id&quot;: ObjectId(&quot;507f1f77bcf86cd799439011&quot;)&amp;#125; ObjectId是一个12字节的二进制BSON类型字符串， 由以下几部分构成：  1-4字节：UNIX时间戳 5-7字节：表示运行MongoDB的机器 8-9字节：">
+<meta name="twitter:description" content="什么是ObjectIdObjectId是MongoDB文档的默认主键，通常位于插入文档的_id字段中。例如： 123&amp;#123;    &quot;_id&quot;: ObjectId(&quot;507f1f77bcf86cd799439011&quot;)&amp;#125;  ObjectId是一个12字节的二进制BSON类型字符串， 由以下几部分构成：  1-4字节：UNIX时间戳 5-7字节：表示运行MongoDB的机器 8-9字节">
 
 
 
@@ -129,7 +129,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/02/25/将时间戳(timestamp)转换为MongoDB中的ObjectId/">
+  <link rel="canonical" href="https://lestatzhang.com/2019/02/25/将时间戳(timestamp)转换为MongoDB中的ObjectId/">
 
 
 
@@ -314,7 +314,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/25/将时间戳(timestamp)转换为MongoDB中的ObjectId/">
+    <link itemprop="mainEntityOfPage" href="https://lestatzhang.com/2019/02/25/将时间戳(timestamp)转换为MongoDB中的ObjectId/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lestat Zhang">
@@ -455,8 +455,9 @@
       
 
       
-        <h5 id="什么是ObjectId"><a href="#什么是ObjectId" class="headerlink" title="什么是ObjectId"></a>什么是ObjectId</h5><p>ObjectId是MongoDB文档的默认主键，通常位于插入文档的_id字段中。例如：
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"_id"</span>: ObjectId(<span class="string">"507f1f77bcf86cd799439011"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <h5 id="什么是ObjectId"><a href="#什么是ObjectId" class="headerlink" title="什么是ObjectId"></a>什么是ObjectId</h5><p>ObjectId是MongoDB文档的默认主键，通常位于插入文档的_id字段中。例如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"_id"</span>: ObjectId(<span class="string">"507f1f77bcf86cd799439011"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>ObjectId是一个12字节的二进制BSON类型字符串， 由以下几部分构成：</p>
 <ul>
 <li>1-4字节：UNIX时间戳</li>
@@ -474,6 +475,7 @@
 </li>
 <li><p>24字节的16进制字符表示</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ObjectId = <span class="built_in">require</span>(<span class="string">'mongodb'</span>).ObjectID</span><br><span class="line"><span class="keyword">var</span> id = <span class="keyword">new</span> ObjectId(<span class="string">"507f1f77bcf86cd799439011"</span>);</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h5 id="ObjectId实例方法"><a href="#ObjectId实例方法" class="headerlink" title="ObjectId实例方法"></a>ObjectId实例方法</h5><p>ObjectId常用的实例方法有:</p>
@@ -483,12 +485,16 @@
 </li>
 <li><p>toHexString()</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ObjectId = <span class="built_in">require</span>(<span class="string">'mongodb'</span>).ObjectID</span><br><span class="line"><span class="keyword">var</span> id = <span class="keyword">new</span> ObjectId(<span class="string">"aaaabbbbcccc"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(id.toHexString())</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h5 id="ObjectId与Timestamp的转换"><a href="#ObjectId与Timestamp的转换" class="headerlink" title="ObjectId与Timestamp的转换"></a>ObjectId与Timestamp的转换</h5><p>以下介绍几种语言中将日期转换为ObjectId的方法</p>
 <h6 id="shell"><a href="#shell" class="headerlink" title="shell"></a>shell</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">curr_dt='2019-02-25'</span><br><span class="line">curr_ts='$(printf '%x' $(date -d "$curr_dt" +%s))'</span><br><span class="line">curr_oid=$(printf '%-24s' $&#123;curr_ts&#125; |sed 's/ /0/g')</span><br></pre></td></tr></table></figure>
+
 <h6 id="python"><a href="#python" class="headerlink" title="python"></a>python</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> dateutil.parser <span class="keyword">import</span> parse</span><br><span class="line"><span class="keyword">from</span> bson <span class="keyword">import</span> ObjectId</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line">curr_dt = parse(<span class="string">'2019-02-25'</span>)</span><br><span class="line">curr_oid = ObjectId(hex(int(time.mktime(curr_dt.timetuple())))[<span class="number">2</span>:] + <span class="string">'0'</span>*<span class="number">16</span>)</span><br></pre></td></tr></table></figure>
+
 <h6 id="javascript"><a href="#javascript" class="headerlink" title="javascript"></a>javascript</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curr_dt=<span class="keyword">new</span> <span class="built_in">Date</span>()</span><br><span class="line">curr_oid = <span class="built_in">Math</span>.floor(curr_dt.getTime() / <span class="number">1000</span>).toString(<span class="number">16</span>) + <span class="string">"0000000000000000"</span>;</span><br></pre></td></tr></table></figure>
+
 <p>除此之前，也可以访问<a href="https://steveridout.github.io/mongo-object-time/" target="_blank" rel="noopener">在线转换器</a></p>
 
       

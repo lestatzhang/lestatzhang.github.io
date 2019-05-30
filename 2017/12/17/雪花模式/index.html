@@ -92,16 +92,16 @@
 <meta name="keywords" content="DWH">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据仓库笔记 —— 雪花模式">
-<meta property="og:url" content="http://yoursite.com/2017/12/17/雪花模式/index.html">
+<meta property="og:url" content="https://lestatzhang.com/2017/12/17/雪花模式/index.html">
 <meta property="og:site_name" content="Lestat.Z">
 <meta property="og:description" content="雪花模式雪花模式是一种多维模型中表的逻辑布局，其实体关系图有类似于雪花的形状，因此得名。与星型模式相同，雪花模式也是由事实表和维度表所组成。所谓 的“雪花化”就是将星型模式中的维度表进行规范化处理。当所有的维度表完成规范化后，就形成了以事实表为中心的雪花型结构，即雪花模式。将维度表进行规范化的具体做法是，把低基数的属性从维度表中移除并形成单独的表。基数指的是一个字段中不同值的个数，如主键列具有唯一">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2017/12/17/雪花模式/2019052914190436.png">
+<meta property="og:image" content="https://lestatzhang.com/2017/12/17/雪花模式/2019052914190436.png">
 <meta property="og:updated_time" content="2017-12-17T04:06:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据仓库笔记 —— 雪花模式">
 <meta name="twitter:description" content="雪花模式雪花模式是一种多维模型中表的逻辑布局，其实体关系图有类似于雪花的形状，因此得名。与星型模式相同，雪花模式也是由事实表和维度表所组成。所谓 的“雪花化”就是将星型模式中的维度表进行规范化处理。当所有的维度表完成规范化后，就形成了以事实表为中心的雪花型结构，即雪花模式。将维度表进行规范化的具体做法是，把低基数的属性从维度表中移除并形成单独的表。基数指的是一个字段中不同值的个数，如主键列具有唯一">
-<meta name="twitter:image" content="http://yoursite.com/2017/12/17/雪花模式/2019052914190436.png">
+<meta name="twitter:image" content="https://lestatzhang.com/2017/12/17/雪花模式/2019052914190436.png">
 
 
 
@@ -131,7 +131,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/12/17/雪花模式/">
+  <link rel="canonical" href="https://lestatzhang.com/2017/12/17/雪花模式/">
 
 
 
@@ -316,7 +316,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/17/雪花模式/">
+    <link itemprop="mainEntityOfPage" href="https://lestatzhang.com/2017/12/17/雪花模式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lestat Zhang">
@@ -467,9 +467,11 @@
 <h4 id="3-缺点"><a href="#3-缺点" class="headerlink" title="3. 缺点"></a>3. 缺点</h4><p>雪花模型的主要缺点是维度属性规范化增加了查询的连接操作和复杂度。相对于平面化的单表维度，多表连接的查询性能会有所下降。但雪花模型的查询性能问题近年来随着数据浏览工具的不断优化而得到缓解。</p>
 <p>和具有更高规范化级别的事务型模式相比，雪花模式并不确保数据完整性。<strong>向雪花模式的表中装载数据时，一定要有严格的控制和管理，避免数据的异常插入或更 新。</strong></p>
 <h4 id="4-示例"><a href="#4-示例" class="headerlink" title="4.示例"></a>4.示例</h4><p>图2-4显示的是将图2-3的星型模式规范化后的雪花模式。日期维度分解成季度、月、周、日期四个表。产品维度分解成产品分类、产品两个表。由商场维度分解出一个地区表。</p>
-<p><img src="./2019052914190436.png" alt>
-下面所示的查询语句的结果等价于前面星型模式的查询，可以明显看到此查询比星型模式的查询有更多的表连接</p>
+<img src="./2019052914190436.png" alt>
+下面所示的查询语句的结果等价于前面星型模式的查询，可以明显看到此查询比星型模式的查询有更多的表连接
+
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> g.city,<span class="keyword">sum</span> (f.units_sold)</span><br><span class="line"><span class="keyword">from</span> fact_sales f</span><br><span class="line"><span class="keyword">inner</span> joindim _date d <span class="keyword">on</span> f.date_id = d.id</span><br><span class="line"><span class="keyword">inner</span> <span class="keyword">join</span> dim_store s <span class="keyword">on</span> f.store_id = s.id</span><br><span class="line"><span class="keyword">inner</span> <span class="keyword">join</span> dim_geography g <span class="keyword">on</span> s.geography_id = g.id</span><br><span class="line"><span class="keyword">inner</span> <span class="keyword">join</span> dim_product p <span class="keyword">on</span> f.product_id = p.id</span><br><span class="line"><span class="keyword">inner</span> <span class="keyword">join</span> dim_product_category c <span class="keyword">on</span> p.product_category_id = c.id</span><br><span class="line"><span class="keyword">where</span> </span><br><span class="line">	d.year = <span class="number">2015</span> <span class="keyword">and</span> c.product_category = <span class="string">'mobile'</span></span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> g.city;</span><br></pre></td></tr></table></figure>
+
 <h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p>[Book]Hadoop构建数据仓库实践, 第2章第2节 —— 维度数据模型</p>
 
       

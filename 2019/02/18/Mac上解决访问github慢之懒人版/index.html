@@ -92,7 +92,7 @@
 <meta name="keywords" content="Mac">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mac上解决访问github慢之懒人版">
-<meta property="og:url" content="http://yoursite.com/2019/02/18/Mac上解决访问github慢之懒人版/index.html">
+<meta property="og:url" content="https://lestatzhang.com/2019/02/18/Mac上解决访问github慢之懒人版/index.html">
 <meta property="og:site_name" content="Lestat.Z">
 <meta property="og:description" content="写了一个简单脚本用来解决Mac上访问github慢的问题，基本思路如下：  访问 http://github.global.ssl.fastly.net.ipaddress.com/#ipinfo 获取github的IP地址 在/etc/hosts中加入查询到的IP和域名 （需要root 权限） 在终端在输以下指令刷新DNS（需要root 权限）  运行以下shell脚本即可，需要root权限。">
 <meta property="og:locale" content="zh-Hans">
@@ -129,7 +129,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/02/18/Mac上解决访问github慢之懒人版/">
+  <link rel="canonical" href="https://lestatzhang.com/2019/02/18/Mac上解决访问github慢之懒人版/">
 
 
 
@@ -314,7 +314,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/18/Mac上解决访问github慢之懒人版/">
+    <link itemprop="mainEntityOfPage" href="https://lestatzhang.com/2019/02/18/Mac上解决访问github慢之懒人版/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lestat Zhang">
@@ -463,6 +463,7 @@
 </ol>
 <p>运行以下shell脚本即可，需要root权限。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>get the fastest github ip</span><br><span class="line">fast_ip=`curl http://github.global.ssl.fastly.net.ipaddress.com/#ipinfo 2&gt;/dev/null| grep -E -o "([0-9]&#123;1,3&#125;[\.])&#123;3&#125;[0-9]&#123;1,3&#125;" |sed -n '2p'`;</span><br><span class="line">echo $fast_ip;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span>Add or replace the $fast_ip in /etc/hosts</span><br><span class="line">if grep "www.github.com" /etc/hosts &gt;/dev/null;then</span><br><span class="line">	echo "github dns exists, replace it with the latest one $fast_ip";</span><br><span class="line">	sed -i -e "s|[0-9]\&#123;1,3\&#125;\.[0-9]\&#123;1,3\&#125;\.[0-9]\&#123;1,3\&#125;\.[0-9]\&#123;1,3\&#125;  *www\.github\.com|$fast_ip www\.github\.com|"  /etc/hosts;</span><br><span class="line">else</span><br><span class="line">	echo "github dns does not exist, replace it with the latest one $fast_ip";</span><br><span class="line">	echo -e "\n#Github\n$fast_ip www.github.com\n" &gt;&gt; /etc/hosts;</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">killall -HUP mDNSResponder;say DNS cache has been flushed;</span><br></pre></td></tr></table></figure>
+
 
       
     </div>

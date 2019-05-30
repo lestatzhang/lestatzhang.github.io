@@ -92,7 +92,7 @@
 <meta name="keywords" content="Spark,dataset,transformations api">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于Spark Dataset API中的Typed transformations和Untyped transformations">
-<meta property="og:url" content="http://yoursite.com/2019/03/17/关于Spark Dataset API中的Typed transformations和Untyped transformations/index.html">
+<meta property="og:url" content="https://lestatzhang.com/2019/03/17/关于Spark Dataset API中的Typed transformations和Untyped transformations/index.html">
 <meta property="og:site_name" content="Lestat.Z">
 <meta property="og:description" content="前言学习Spark源代码的过程中遇到了Typed transformations和Untyped transformations两个概念，整理了以下相关的笔记。 对于这两个概念，不知道怎么翻译好，个人理解为强类型转换和弱类型转换，也不知道对不对，欢迎各位大神指正。 关于DatasetDataset是特定领域对象(domain-specific object)的强类型集合，它可以使用函数或关系运算进">
 <meta property="og:locale" content="zh-Hans">
@@ -129,7 +129,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/17/关于Spark Dataset API中的Typed transformations和Untyped transformations/">
+  <link rel="canonical" href="https://lestatzhang.com/2019/03/17/关于Spark Dataset API中的Typed transformations和Untyped transformations/">
 
 
 
@@ -314,7 +314,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/17/关于Spark Dataset API中的Typed transformations和Untyped transformations/">
+    <link itemprop="mainEntityOfPage" href="https://lestatzhang.com/2019/03/17/关于Spark Dataset API中的Typed transformations和Untyped transformations/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lestat Zhang">
@@ -453,9 +453,9 @@
 <td>Dataset[T] &amp; DataFrame (alias for Dataset[Row])</td>
 </tr><tr><td>Java</td>
 <td>Dataset[T]</td>
-</tr><tr><td>Python<em></em></td>
+</tr><tr><td>Python*</td>
 <td>DataFrame</td>
-</tr><tr><td>R</td>
+</tr><tr><td>R*</td>
 <td>DataFrame</td>
 </tr></tbody></table>
 
@@ -471,8 +471,9 @@
 </blockquote>
 </li>
 </ul>
-<p>例如Dataset.scala类中的<a href="https://github.com/apache/spark/blob/master/sql/core/src/main/scala/org/apache/spark/sql/Dataset.scala#L864-L876" target="_blank" rel="noopener">join方法</a>就属于弱类型转换(untyped transformations).
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Join with another `DataFrame`.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * Behaves as an INNER JOIN and requires a subsequent join predicate.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> right Right side of the join operation.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@group</span> untypedrel</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span> 2.0.0</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function">def <span class="title">join</span><span class="params">(right: Dataset[_])</span>: DataFrame </span>= withPlan &#123;</span><br><span class="line">  Join(logicalPlan, right.logicalPlan, joinType = Inner, None, JoinHint.NONE)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>例如Dataset.scala类中的<a href="https://github.com/apache/spark/blob/master/sql/core/src/main/scala/org/apache/spark/sql/Dataset.scala#L864-L876" target="_blank" rel="noopener">join方法</a>就属于弱类型转换(untyped transformations).</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Join with another `DataFrame`.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * Behaves as an INNER JOIN and requires a subsequent join predicate.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> right Right side of the join operation.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@group</span> untypedrel</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span> 2.0.0</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function">def <span class="title">join</span><span class="params">(right: Dataset[_])</span>: DataFrame </span>= withPlan &#123;</span><br><span class="line">  Join(logicalPlan, right.logicalPlan, joinType = Inner, None, JoinHint.NONE)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>通常，任何更改Dataset列类型或添加新列的的转换是弱类型。 当我们需要修改Dataset的schema时，我们就需要退回到Dataframe进行操作。</p>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://www.oreilly.com/library/view/spark-the-definitive/9781491912201/ch04.html" target="_blank" rel="noopener">Structured API Overview</a>
 <a href="http://apache-spark-user-list.1001560.n3.nabble.com/Difference-between-Typed-and-untyped-transformation-in-dataset-API-td34650.html" target="_blank" rel="noopener">Difference-between-Typed-and-untyped-transformation-in-dataset-API</a>

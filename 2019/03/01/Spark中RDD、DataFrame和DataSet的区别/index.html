@@ -92,7 +92,7 @@
 <meta name="keywords" content="Spark">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spark中RDD、DataFrame和DataSet的区别">
-<meta property="og:url" content="http://yoursite.com/2019/03/01/Spark中RDD、DataFrame和DataSet的区别/index.html">
+<meta property="og:url" content="https://lestatzhang.com/2019/03/01/Spark中RDD、DataFrame和DataSet的区别/index.html">
 <meta property="og:site_name" content="Lestat.Z">
 <meta property="og:description" content="前言最近同事开始学习使用Spark，问我RDD、DataFrame和DataSet之间有什么区别，以及生产环境中的spark1.6将在不久后被移除，全部使用spark2+。于是今天我就借机整理了以下它们三者之间的异同。 RDD、DataFrame和DataSet的定义在开始Spark RDD与DataFrame与Dataset之间的比较之前，先让我们看一下Spark中的RDD，DataFrame和">
 <meta property="og:locale" content="zh-Hans">
@@ -129,7 +129,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/01/Spark中RDD、DataFrame和DataSet的区别/">
+  <link rel="canonical" href="https://lestatzhang.com/2019/03/01/Spark中RDD、DataFrame和DataSet的区别/">
 
 
 
@@ -314,7 +314,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/01/Spark中RDD、DataFrame和DataSet的区别/">
+    <link itemprop="mainEntityOfPage" href="https://lestatzhang.com/2019/03/01/Spark中RDD、DataFrame和DataSet的区别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lestat Zhang">
@@ -489,15 +489,19 @@ DataFrame是命名列构成的分布式数据集合。 它在概念上类似于�
 它也可以有效地处理结构化和非结构化数据。 它表示行(row)的JVM对象或行对象集合形式的数据。 它通过编码器以表格形式(tabular forms)表示。</li>
 </ul>
 <h5 id="编译时类型安全"><a href="#编译时类型安全" class="headerlink" title="编译时类型安全"></a>编译时类型安全</h5><ul>
-<li>RDD
-RDD提供了一种熟悉的面向对象编程风格，具有编译时类型安全性。</li>
-<li>DataFrame
-如果您尝试访问表中不存在的列，则持编译错误。 它仅在运行时检测属性错误。</li>
-<li>DataSet 
+<li><p>RDD
+RDD提供了一种熟悉的面向对象编程风格，具有编译时类型安全性。</p>
+</li>
+<li><p>DataFrame
+如果您尝试访问表中不存在的列，则持编译错误。 它仅在运行时检测属性错误。</p>
+</li>
+<li><p>DataSet 
 DataSet可以在编译时检查类型, 它提供编译时类型安全性。
-[TO-DO 什么是编译时的类型安全]<h5 id="序列化"><a href="#序列化" class="headerlink" title="序列化"></a>序列化</h5></li>
-<li>RDD
-每当Spark需要在集群内分发数据或将数据写入磁盘时，它就会使用Java序列化。序列化单个Java和Scala对象的开销很昂贵，并且需要在节点之间发送数据和结构。</li>
+[TO-DO 什么是编译时的类型安全]</p>
+<h5 id="序列化"><a href="#序列化" class="headerlink" title="序列化"></a>序列化</h5></li>
+<li><p>RDD
+每当Spark需要在集群内分发数据或将数据写入磁盘时，它就会使用Java序列化。序列化单个Java和Scala对象的开销很昂贵，并且需要在节点之间发送数据和结构。</p>
+</li>
 <li><p>DataFrame
 Spark DataFrame可以将数据序列化为二进制格式的堆外存储（在内存中），然后直接在此堆内存上执行许多转换。无需使用java序列化来编码数据。它提供了一个Tungsten物理执行后端，来管理内存并动态生成字节码以进行表达式评估。</p>
 </li>

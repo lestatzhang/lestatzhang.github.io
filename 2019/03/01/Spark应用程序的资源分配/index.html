@@ -92,16 +92,16 @@
 <meta name="keywords" content="Spark">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何为Spark集群配置--num-executors， -  executor-memory和--execuor-cores">
-<meta property="og:url" content="http://yoursite.com/2019/03/01/Spark应用程序的资源分配/index.html">
+<meta property="og:url" content="https://lestatzhang.com/2019/03/01/Spark应用程序的资源分配/index.html">
 <meta property="og:site_name" content="Lestat.Z">
 <meta property="og:description" content="前言在我们提交spark程序时，应该如何为Spark集群配置--num-executors， -  executor-memory和--execuor-cores 呢？ 一些资源参数设置的基本知识 Hadoop / Yarn / OS Deamons  当我们使用像Yarn这样的集群管理器运行spark应用程序时，会有几个守护进程在后台运行，如NameNode，Secondary NameNode">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2019/03/01/Spark应用程序的资源分配/20190301133032273.png">
+<meta property="og:image" content="https://lestatzhang.com/2019/03/01/Spark应用程序的资源分配/20190301133032273.png">
 <meta property="og:updated_time" content="2019-03-01T05:47:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何为Spark集群配置--num-executors， -  executor-memory和--execuor-cores">
 <meta name="twitter:description" content="前言在我们提交spark程序时，应该如何为Spark集群配置--num-executors， -  executor-memory和--execuor-cores 呢？ 一些资源参数设置的基本知识 Hadoop / Yarn / OS Deamons  当我们使用像Yarn这样的集群管理器运行spark应用程序时，会有几个守护进程在后台运行，如NameNode，Secondary NameNode">
-<meta name="twitter:image" content="http://yoursite.com/2019/03/01/Spark应用程序的资源分配/20190301133032273.png">
+<meta name="twitter:image" content="https://lestatzhang.com/2019/03/01/Spark应用程序的资源分配/20190301133032273.png">
 
 
 
@@ -131,7 +131,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/01/Spark应用程序的资源分配/">
+  <link rel="canonical" href="https://lestatzhang.com/2019/03/01/Spark应用程序的资源分配/">
 
 
 
@@ -316,7 +316,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/01/Spark应用程序的资源分配/">
+    <link itemprop="mainEntityOfPage" href="https://lestatzhang.com/2019/03/01/Spark应用程序的资源分配/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lestat Zhang">
@@ -478,8 +478,7 @@ JVM还需要一些off heap的内存，请参考下图中描绘的Spark和YARN中
 
 
 <p>例如当我设置  --executor-memory=20时， 我们实际请求了</p>
-<pre><code>20GB + memoryOverhead = 20 + 7% of 20GB = ~23GB。
-</code></pre><blockquote>
+<pre><code>20GB + memoryOverhead = 20 + 7% of 20GB = ~23GB。</code></pre><blockquote>
 <p>运行具有executors大内存的通常会导致<font color="black"><b>过多的GC延迟。</b></font><br>
 运行较小的executors（例如，1G &amp; 1 CPU core）则会浪费 ==单个JVM中运行多个任务==所带来的优点。</p>
 </blockquote>
@@ -487,12 +486,17 @@ JVM还需要一些off heap的内存，请参考下图中描绘的Spark和YARN中
  <table align="left"><tr><td align="left">
  10 Nodes <br>
 16 cores per Node<br>
-64GB RAM per Node
-</td></tr></table></p>
+64GB RAM per Node</td></tr></table></p>
+
+
+
+
 <h5 id="第一种方法：使用较小的executors"><a href="#第一种方法：使用较小的executors" class="headerlink" title="第一种方法：使用较小的executors"></a>第一种方法：使用较小的executors</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">`--num-executors` = `在这种方法中，我们将为每个核心分配一个executor`</span><br><span class="line">                  = `集群的总核心数`</span><br><span class="line">                  = `每个节点的核心数 * 集群的总节点数` </span><br><span class="line">                  =  16 x 10 = 160</span><br><span class="line">                  </span><br><span class="line">`--executor-cores`  = 1 (`每个executor分配的核心数目`)</span><br><span class="line"></span><br><span class="line">`--executor-memory` = `每个executor分配的内存数`</span><br><span class="line">                    = `每个节点内存总数数/每个节点上分配的executor数`</span><br><span class="line">                    = 64GB/16 = 4GB</span><br></pre></td></tr></table></figure>
+
 <p><strong>分析</strong>：
 由于每个executor只分配了一个核，我们将无法利用在同一个JVM中运行多个任务的优点。 此外，共享/缓存变量（如广播变量和累加器）将在节点的每个核心中复制16次。 最严重的就是，我们没有为Hadoop / Yarn守护程序进程留下足够的内存开销，我们还忘记了将ApplicationManagers运行所需要的开销加入计算。 </p>
 <h5 id="第二种方法：使用较大的executors"><a href="#第二种方法：使用较大的executors" class="headerlink" title="第二种方法：使用较大的executors"></a>第二种方法：使用较大的executors</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">`--num-executors` = `在这种方法中，我们将为每个节点分配一个executor`</span><br><span class="line">                  = `集群的总节点数`</span><br><span class="line">                  = 10</span><br><span class="line">                    </span><br><span class="line">`--executor-cores` = `每个节点一个executor意味着该节点的所有核心都分配给一个执executor`</span><br><span class="line">                   = `每个节点的总核心数`</span><br><span class="line">                   = 16</span><br><span class="line">                     </span><br><span class="line">`--executor-memory` = `每个executor分配的内存数`</span><br><span class="line">                    = `每个节点内存总数数/每个节点上分配的executor数`</span><br><span class="line">                    = 64GB/1 = 64GB</span><br></pre></td></tr></table></figure>
+
 <p><strong>分析：</strong>
 每个executor都有16个核心，由于HDFS客户端遇到大量并发线程会出现一些bug，即HDFS吞吐量会受到影响。同时过大的内存分配也会导致过多的GC延迟。 </p>
 <h5 id="第三种方法：使用优化的executors"><a href="#第三种方法：使用优化的executors" class="headerlink" title="第三种方法：使用优化的executors"></a>第三种方法：使用优化的executors</h5><ul>

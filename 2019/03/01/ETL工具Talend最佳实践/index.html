@@ -92,7 +92,7 @@
 <meta name="keywords" content="ETL,Talend">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ETL工具Talend最佳实践">
-<meta property="og:url" content="http://yoursite.com/2019/03/01/ETL工具Talend最佳实践/index.html">
+<meta property="og:url" content="https://lestatzhang.com/2019/03/01/ETL工具Talend最佳实践/index.html">
 <meta property="og:site_name" content="Lestat.Z">
 <meta property="og:description" content="前言和Talend这款软件打交道有一段时间了，主要用它来做一些ETL相关的作业开发，以下总结了一些自己配置与开发过程中的最佳实践。 最佳实践 可以通过修改Talend Studio 的 .ini 配置文件来给其分配更多的内存，例如，以下是我在64位8GB内存的电脑配置的参数  -vmargs  -Xms2014m  -Xmx4096m  -XX:MaxPermSize=512m  -Dfile.e">
 <meta property="og:locale" content="zh-Hans">
@@ -129,7 +129,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/01/ETL工具Talend最佳实践/">
+  <link rel="canonical" href="https://lestatzhang.com/2019/03/01/ETL工具Talend最佳实践/">
 
 
 
@@ -314,7 +314,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/01/ETL工具Talend最佳实践/">
+    <link itemprop="mainEntityOfPage" href="https://lestatzhang.com/2019/03/01/ETL工具Talend最佳实践/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lestat Zhang">
@@ -396,7 +396,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  446
+                  452
                 </span>
               
 
@@ -435,20 +435,20 @@
       
         <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>和Talend这款软件打交道有一段时间了，主要用它来做一些ETL相关的作业开发，以下总结了一些自己配置与开发过程中的最佳实践。</p>
 <h4 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h4><ol>
-<li><p>可以通过修改Talend Studio 的 <strong>.ini</strong> 配置文件来给其分配更多的内存，例如，以下是我在64位8GB内存的电脑配置的参数</p>
-<table><tr><td align="left">
--vmargs <br>
+<li>可以通过修改Talend Studio 的 <strong>.ini</strong> 配置文件来给其分配更多的内存，例如，以下是我在64位8GB内存的电脑配置的参数<table><tr><td align="left"></td></tr></table></li>
+</ol>
+<p>-vmargs <br>
 -Xms2014m <br>
 -Xmx4096m <br>
 -XX:MaxPermSize=512m <br>
--Dfile.encoding=UTF-8 <br>
-</td></tr></table>
-</li>
-<li><p>在开发过程中一定要注意对Null值得处理</p>
-</li>
+-Dfile.encoding=UTF-8 <br></p>
+
+
+<ol start="2">
+<li>在开发过程中一定要注意对Null值得处理</li>
 <li>可以创建Repository Metadata用于数据库连接</li>
-<li>可以使用 ==t\<db>== 的数据连接组件定义数据库连接，并重复使用。</db></li>
-<li>记得使用 ==t\<db>== 组件来关闭数据库连接</db></li>
+<li>可以使用 ==t&lt;DB&gt;== 的数据连接组件定义数据库连接，并重复使用。</li>
+<li>记得使用 ==t&lt;DB&gt;== 组件来关闭数据库连接</li>
 <li>避免在Talend的组件中在使用硬编码值(hard coding)，使用Talend context 变量代替</li>
 <li>尽可能使用变量代替硬编码</li>
 <li>对于频繁的变换，可以通过创建routines或者functions来减少工作量</li>

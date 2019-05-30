@@ -92,7 +92,7 @@
 <meta name="keywords" content="Spark,Parallelism,Tuning">
 <meta property="og:type" content="article">
 <meta property="og:title" content="spark.sql.shuffle.partitions 和 spark.default.parallelism 的区别">
-<meta property="og:url" content="http://yoursite.com/2019/02/27/spark.sql.shuffle.partitions 和 spark.default.parallelism 的区别/index.html">
+<meta property="og:url" content="https://lestatzhang.com/2019/02/27/spark.sql.shuffle.partitions 和 spark.default.parallelism 的区别/index.html">
 <meta property="og:site_name" content="Lestat.Z">
 <meta property="og:description" content="在关于spark任务并行度的设置中，有两个参数我们会经常遇到，spark.sql.shuffle.partitions 和 spark.default.parallelism, 那么这两个参数到底有什么区别的？ 首先，让我们来看下它们的定义    Property Name Default Meaning     spark.sql.shuffle.partitions 200 Configure">
 <meta property="og:locale" content="zh-Hans">
@@ -129,7 +129,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/02/27/spark.sql.shuffle.partitions 和 spark.default.parallelism 的区别/">
+  <link rel="canonical" href="https://lestatzhang.com/2019/02/27/spark.sql.shuffle.partitions 和 spark.default.parallelism 的区别/">
 
 
 
@@ -314,7 +314,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/27/spark.sql.shuffle.partitions 和 spark.default.parallelism 的区别/">
+    <link itemprop="mainEntityOfPage" href="https://lestatzhang.com/2019/02/27/spark.sql.shuffle.partitions 和 spark.default.parallelism 的区别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lestat Zhang">
@@ -484,8 +484,9 @@
 <li>spark.default.parallelism只有在处理RDD时才会起作用，对Spark SQL的无效。</li>
 <li>spark.sql.shuffle.partitions则是对sparks SQL专用的设置</li>
 </ul>
-<p>我们可以在提交作业的通过 <code>--conf</code> 来修改这两个设置的值，方法如下：
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spark-submit --conf spark.sql.shuffle.partitions=20 --conf spark.default.parallelism=20</span><br></pre></td></tr></table></figure></p>
+<p>我们可以在提交作业的通过 <code>--conf</code> 来修改这两个设置的值，方法如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spark-submit --conf spark.sql.shuffle.partitions=20 --conf spark.default.parallelism=20</span><br></pre></td></tr></table></figure>
+
 
       
     </div>

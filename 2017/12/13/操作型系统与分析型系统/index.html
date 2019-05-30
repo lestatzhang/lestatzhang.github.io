@@ -92,16 +92,16 @@
 <meta name="keywords" content="DWH">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据仓库笔记 —— 操作型系统与分析型系统">
-<meta property="og:url" content="http://yoursite.com/2017/12/13/操作型系统与分析型系统/index.html">
+<meta property="og:url" content="https://lestatzhang.com/2017/12/13/操作型系统与分析型系统/index.html">
 <meta property="og:site_name" content="Lestat.Z">
 <meta property="og:description" content="前言 操作型系统完成组织的核心业务，例如下订单、更新库存、记录支付信息等。这些系统是事务型的，核心目标是尽可能快地处理事务，同时维护数据的一致性和完整性。 分析型系统的主要作用是通过数据分析评估组织的业务经营状况，并进一步辅助决策。  操作型系统操作型系统的特性操作型系统是一类专门用于管理面向事务的应用的信息系统。 事务是工作于数据库管理系统(或类似系统)中的一个逻辑单元，该逻辑单元中的操作被以一">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2017/12/13/操作型系统与分析型系统/20190526224455389.png">
+<meta property="og:image" content="https://lestatzhang.com/2017/12/13/操作型系统与分析型系统/20190526224455389.png">
 <meta property="og:updated_time" content="2017-12-13T12:23:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据仓库笔记 —— 操作型系统与分析型系统">
 <meta name="twitter:description" content="前言 操作型系统完成组织的核心业务，例如下订单、更新库存、记录支付信息等。这些系统是事务型的，核心目标是尽可能快地处理事务，同时维护数据的一致性和完整性。 分析型系统的主要作用是通过数据分析评估组织的业务经营状况，并进一步辅助决策。  操作型系统操作型系统的特性操作型系统是一类专门用于管理面向事务的应用的信息系统。 事务是工作于数据库管理系统(或类似系统)中的一个逻辑单元，该逻辑单元中的操作被以一">
-<meta name="twitter:image" content="http://yoursite.com/2017/12/13/操作型系统与分析型系统/20190526224455389.png">
+<meta name="twitter:image" content="https://lestatzhang.com/2017/12/13/操作型系统与分析型系统/20190526224455389.png">
 
 
 
@@ -131,7 +131,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/12/13/操作型系统与分析型系统/">
+  <link rel="canonical" href="https://lestatzhang.com/2017/12/13/操作型系统与分析型系统/">
 
 
 
@@ -316,7 +316,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/13/操作型系统与分析型系统/">
+    <link itemprop="mainEntityOfPage" href="https://lestatzhang.com/2017/12/13/操作型系统与分析型系统/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lestat Zhang">
@@ -516,7 +516,8 @@
 <li>物化视图。物化视图物理存储查询所定义的数据，能够自动增量刷新数据，并且可以利用查询重写特性极大地提高查询速度，是分析型系统常用的技术。 </li>
 <li>并行化操作。可以在查询大量数据时执行并行化操作，这样会导致多个服务器进程为同一个查询语句工作，使用该查询可以快速完成，但是会耗费更多的资源。</li>
 </ul>
-<h4 id="操作型系统和分析型系统对比"><a href="#操作型系统和分析型系统对比" class="headerlink" title="操作型系统和分析型系统对比"></a>操作型系统和分析型系统对比</h4><p><img src="./20190526224455389.png" alt></p>
+<h4 id="操作型系统和分析型系统对比"><a href="#操作型系统和分析型系统对比" class="headerlink" title="操作型系统和分析型系统对比"></a>操作型系统和分析型系统对比</h4><img src="./20190526224455389.png" alt>
+
 <ul>
 <li>首先两种系统的侧重点不同。操作型系统更适合对已有数据的更新，所以是日常处理工作或在线系统的选择。相反，分析型系统提供在大量存储数据上的分析能力， 所以这类系统更适合报表类应用。分析型系统通常是查询历史数据，这有助于得到更准确的分析报告。</li>
 <li>其次因为这两种系统的目标完全不同，所以为了得到更好的性能，使用的数据模型和设计方法也不同。操作型系统数据库通常使用规范化设计，为普通查询和数据修 改提供更好的性能。另一方面，分析型数据库具有典型的数据仓库组织形式。</li>

@@ -92,7 +92,7 @@
 <meta name="keywords" content="autosys">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CA Autosys — condition依赖条件">
-<meta property="og:url" content="http://yoursite.com/2019/02/23/CA Autosys(2) — condition依赖条件/index.html">
+<meta property="og:url" content="https://lestatzhang.com/2019/02/23/CA Autosys(2) — condition依赖条件/index.html">
 <meta property="og:site_name" content="Lestat.Z">
 <meta property="og:description" content="Dependent Jobs 具有依赖的作业在Autosys中，作业(Job)可以取决于其他作业的完成结果。 具有依赖的作业和简单作业之间的唯一区别是它依赖于另一个或多个作业。  我们可以通过condition属性来指定作业依赖关系。我们还可以在作业的依赖关系中添加时间限制，即回看条件(look-back condition)。 更多关于condition属性的介绍，请移步官方文档 现在让我们来创">
 <meta property="og:locale" content="zh-Hans">
@@ -129,7 +129,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/02/23/CA Autosys(2) — condition依赖条件/">
+  <link rel="canonical" href="https://lestatzhang.com/2019/02/23/CA Autosys(2) — condition依赖条件/">
 
 
 
@@ -314,7 +314,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/23/CA Autosys(2) — condition依赖条件/">
+    <link itemprop="mainEntityOfPage" href="https://lestatzhang.com/2019/02/23/CA Autosys(2) — condition依赖条件/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lestat Zhang">
@@ -459,13 +459,15 @@
 <p>我们可以通过<strong>condition</strong>属性来指定作业依赖关系。我们还可以在作业的依赖关系中添加时间限制，即<strong>回看条件</strong>(look-back condition)。</p>
 <p>更多关于condition属性的介绍，请移步<a href="https://support.ca.com/cadocs/0/CA%20Workload%20Automation%20AE%20Release%2011%203%206%20-%20Public%20Access-ENU/Bookshelf_Files/PDF/WA_AE_User_ENU.pdf" target="_blank" rel="noopener">官方文档</a></p>
 <p>现在让我们来创建一个具有依赖关系的作业
-JIL定义如下：
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/ *** EOD_post *** /</span><br><span class="line">insert_job: EOD_post</span><br><span class="line">job_type: cmd</span><br><span class="line">machine: prod</span><br><span class="line">condition: s(EOD_watch)</span><br><span class="line">command: $HOME/POST</span><br></pre></td></tr></table></figure></p>
+JIL定义如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/ *** EOD_post *** /</span><br><span class="line">insert_job: EOD_post</span><br><span class="line">job_type: cmd</span><br><span class="line">machine: prod</span><br><span class="line">condition: s(EOD_watch)</span><br><span class="line">command: $HOME/POST</span><br></pre></td></tr></table></figure>
+
 <p>以上我们定了一个名为EOD_POST的cmd作业，它的依赖关系为 <em>s(EOD_watch)</em>, 即依赖于EOD_watch作业的成功。换句话说，只有EOD_watch这个作业的完成状态为success，EOD_POST才会被启动。</p>
 <h4 id="look-back-condition-回看条件"><a href="#look-back-condition-回看条件" class="headerlink" title="look-back condition 回看条件"></a>look-back condition 回看条件</h4><p>我们还可以在作业的依赖关系中添加时间限制，即<strong>回看条件</strong>(look-back condition)。</p>
 <p>在这里我们举个例子来加深对这个概念的理解。
-例如我们有一个作业test_sample_04，其定义如下：
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">insert_job: test_sample_04</span><br><span class="line">job_type: cmd</span><br><span class="line">machine: localhost</span><br><span class="line">command: sleep 10</span><br><span class="line">condition: s(test_sample_01,12.00) AND f(test_sample_02,24.00) AND</span><br><span class="line">s(test_sample_03)</span><br></pre></td></tr></table></figure></p>
+例如我们有一个作业test_sample_04，其定义如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">insert_job: test_sample_04</span><br><span class="line">job_type: cmd</span><br><span class="line">machine: localhost</span><br><span class="line">command: sleep 10</span><br><span class="line">condition: s(test_sample_01,12.00) AND f(test_sample_02,24.00) AND</span><br><span class="line">s(test_sample_03)</span><br></pre></td></tr></table></figure>
+
 <p>只有condition中所有条件时满足时，命令作业test_sample_04才会被启动，即满足：</p>
 <ul>
 <li>最近一次运行的test_sample_01的完成状态为success, 且完成时间在过去12小时内。</li>
@@ -476,11 +478,13 @@ JIL定义如下：
 <p>回看条件的时间依赖的表示方法为 HH.MM （HH为小时数，MM为分钟数,  如上面例子中的<code>s(test_sample_01,12.00)</code></p>
 <p>look-back condition还有有一种特殊用法,<code>condition : s(dep_job, 0)</code>, 
 让我们再举一个例子来加深理。
-我们先定义一个cmd作业test_sample_05：
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">insert_job: test_sample_05</span><br><span class="line">job_type: cmd</span><br><span class="line">machine: localhost</span><br><span class="line">command: sleep 10</span><br><span class="line">condition: s(test_sample_04)</span><br></pre></td></tr></table></figure></p>
+我们先定义一个cmd作业test_sample_05：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">insert_job: test_sample_05</span><br><span class="line">job_type: cmd</span><br><span class="line">machine: localhost</span><br><span class="line">command: sleep 10</span><br><span class="line">condition: s(test_sample_04)</span><br></pre></td></tr></table></figure>
+
 <p>它只要检测到test_sample_04完成并具有success状态就会启动。</p>
 <p>然后我们更新它的condition依赖条件：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">update_job: test_sample_05</span><br><span class="line">condition: s(test_sample_04, 0)</span><br></pre></td></tr></table></figure>
+
 <p>这里我们在condition中增加了回看条件依赖<code>0</code>，此时，autosys会先检测test_sample_05上一次的完成时间，比如昨天11点, 然后它会去检测test_sample_05所依赖的test_sample_04的完成时间，只有test_sample_04最后一次的完成时间在test_sample_05上一次的完成之间之后，新的test_sample_05才会被启动。
 例如，上一次test_sample_05完成时间是11点，而最近一次test_sample_04的完成时间是昨天10点，则其条件不满足。再比如，最近一次test_sample_04的完成时间是昨天11点05分，晚于上一次test_sample_05完成时间(11点)，则其条件满足，test_sample_05会被启动。
 可以参考下表：</p>
@@ -492,8 +496,7 @@ JIL定义如下：
 <th>condition</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>11:00 AM (yestoday)</td>
 <td>10:55 AM (yestoday)</td>
 <td>Not satisfied ❌</td>
@@ -503,8 +506,7 @@ JIL定义如下：
 <td>11:05 AM (yestoday)</td>
 <td>Satisfied ✅</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 
       
     </div>

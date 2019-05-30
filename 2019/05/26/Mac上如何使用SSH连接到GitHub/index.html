@@ -92,7 +92,7 @@
 <meta name="keywords" content="Mac">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mac上如何使用SSH连接到GitHub">
-<meta property="og:url" content="http://yoursite.com/2019/05/26/Mac上如何使用SSH连接到GitHub/index.html">
+<meta property="og:url" content="https://lestatzhang.com/2019/05/26/Mac上如何使用SSH连接到GitHub/index.html">
 <meta property="og:site_name" content="Lestat.Z">
 <meta property="og:description" content="前言关于SSH使用SSH协议，你可以连接和验证远程服务器与服务。 使用SSH密钥，你可以在每次访问时不提供用户名或密码就可以连接到GitHub，即免密登陆。 当你设置SSH时，你需要生成SSH密钥并将其添加到ssh-agent，然后将密钥添加到您的GitHub帐户。 将SSH密钥添加到ssh-agent可确保你的SSH密钥通过使用passphrase而具有额外的安全层。 如果你超过一年未使用SSH">
 <meta property="og:locale" content="zh-Hans">
@@ -129,7 +129,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/05/26/Mac上如何使用SSH连接到GitHub/">
+  <link rel="canonical" href="https://lestatzhang.com/2019/05/26/Mac上如何使用SSH连接到GitHub/">
 
 
 
@@ -314,7 +314,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/26/Mac上如何使用SSH连接到GitHub/">
+    <link itemprop="mainEntityOfPage" href="https://lestatzhang.com/2019/05/26/Mac上如何使用SSH连接到GitHub/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lestat Zhang">
@@ -463,15 +463,17 @@
 <p>注意：在OpenSSH 7.0中不推荐使用DSA密钥。 如果你的操作系统使用OpenSSH，则在设置SSH时需要使用备用类型的密钥，例如RSA密钥。 例如，如果你的操作系统是MacOS Sierra，则可以使用RSA密钥设置SSH。</p>
 </blockquote>
 <ol>
-<li>打开终端 </li>
+<li><p>打开终端 </p>
+</li>
 <li><p>输入ls -al ~/.ssh以查看是否存在现有SSH密钥：</p>
  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> ls -al ~/.ssh</span><br><span class="line"><span class="meta">#</span> Lists the files in your .ssh directory, if they exist</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>检查目录列表以查看你是否已拥有公共SSH密钥。</p>
 </li>
 </ol>
-<p>默认情况下，公钥的文件名是以下之一：
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">id_dsa.pub</span><br><span class="line">id_ecdsa.pub</span><br><span class="line">id_ed25519.pub</span><br><span class="line">id_rsa.pub</span><br></pre></td></tr></table></figure></p>
+<p>默认情况下，公钥的文件名是以下之一：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">id_dsa.pub</span><br><span class="line">id_ecdsa.pub</span><br><span class="line">id_ed25519.pub</span><br><span class="line">id_rsa.pub</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>如你没有现有的公钥和私钥对，或者不希望使用任何可用的连接到GitHub，则生成新的SSH密钥。</li>
 <li>如果你看到要用于连接到GitHub的现有公钥和私钥对（例如id_rsa.pub和id_rsa），则可以将SSH密钥添加到ssh-agent。</li>
@@ -487,6 +489,7 @@
 </li>
 <li><p>在终端粘贴下面的文本，记得替换你自己的GitHub电子邮件地址。</p>
  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> ssh-keygen -t rsa -b 4096 -C“your_email@example.com”</span><br></pre></td></tr></table></figure>
+
 <p> 这将使用你提供的电子邮件作为标签创建一个新的ssh密钥。</p>
  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span> Generating public/private rsa key pair.</span><br></pre></td></tr></table></figure>
 </li>
@@ -495,6 +498,7 @@
 </li>
 <li><p>在提示符下，键入安全密码。</p>
  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span> Enter passphrase (empty for no passphrase): [Type a passphrase]</span><br><span class="line"><span class="meta">&gt;</span> Enter same passphrase again: [Type passphrase again]</span><br></pre></td></tr></table></figure>
+
 </li>
 </ol>
 <h3 id="将SSH密钥添加到ssh-agent"><a href="#将SSH密钥添加到ssh-agent" class="headerlink" title="将SSH密钥添加到ssh-agent"></a>将SSH密钥添加到ssh-agent</h3><p>在将新的SSH密钥添加到ssh-agent以管理密钥之前，你应该检查现有的SSH密钥并生成新的SSH密钥。将SSH密钥添加到代理时，请使用默认的macOS ssh-add命令，而不是macports，homebrew或其他外部源安装的应用程序。</p>
@@ -507,6 +511,7 @@
 </li>
 <li><p>将SSH私钥添加到ssh-agent并将密码存储在密钥链中。如果使用其他名称创建密钥，或者要添加具有不同名称的现有密钥，请将命令中的id_rsa替换为私钥文件的名称。</p>
  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> ssh-add -K ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure>
+
 </li>
 </ol>
 <blockquote>
@@ -527,11 +532,14 @@
 </ul>
 <p>测试连接时，你需要使用密码验证此操作，密码是你之前创建的SSH密钥密码。有关使用SSH密钥密码的更多信息，请参阅<a href="https://help.github.com/en/articles/working-with-ssh-key-passphrases" target="_blank" rel="noopener">“使用SSH密钥密码”</a>。</p>
 <ol>
-<li>打开终端</li>
+<li><p>打开终端</p>
+</li>
 <li><p>输入以下内容：</p>
  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> ssh -T git@github.com</span><br><span class="line"><span class="meta">#</span> Attempts to ssh to GitHub</span><br></pre></td></tr></table></figure>
+
 <p> 你可能会看到如下警告：</p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; The authenticity of host &apos;github.com (IP ADDRESS)&apos; can&apos;t be established.</span><br><span class="line">  &gt; RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.</span><br><span class="line">  &gt; Are you sure you want to continue connecting (yes/no)?</span><br></pre></td></tr></table></figure>
+
 <p> 或者：</p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; The authenticity of host &apos;github.com (IP ADDRESS)&apos; can&apos;t be established.</span><br><span class="line">  &gt; RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.</span><br><span class="line">  &gt; Are you sure you want to continue connecting (yes/no)?</span><br></pre></td></tr></table></figure>
 </li>
@@ -545,6 +553,7 @@
 <p>使用SSH密钥，如果有人获得对你计算机的访问权限，他们也可以访问使用该密钥的每个系统。 要添加额外的安全层，可以向SSH密钥添加密码。 你可以使用ssh-agent安全地保存密码，这样你就不必重新输入密码。</p>
 <h3 id="添加或更改passphrase"><a href="#添加或更改passphrase" class="headerlink" title="添加或更改passphrase"></a>添加或更改passphrase</h3><p>你可以通过键入以下命令来更改现有私钥的密码，而无需重新生成密钥对：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> ssh-keygen -p</span><br><span class="line"><span class="meta">#</span> Start the SSH key creation process</span><br><span class="line"><span class="meta">&gt;</span> Enter file in which the key is (/Users/you/.ssh/id_rsa): [Hit enter]</span><br><span class="line"><span class="meta">&gt;</span> Key has comment '/Users/you/.ssh/id_rsa'</span><br><span class="line"><span class="meta">&gt;</span> Enter new passphrase (empty for no passphrase): [Type new passphrase]</span><br><span class="line"><span class="meta">&gt;</span> Enter same passphrase again: [One more time for luck]</span><br><span class="line"><span class="meta">&gt;</span> Your identification has been saved with the new passphrase.</span><br></pre></td></tr></table></figure>
+
 <p>如果你的密钥已有passphrase，系统将提示你输入密码短语，然后才能更改为新密码短语。</p>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://help.github.com/en/articles/connecting-to-github-with-ssh" target="_blank" rel="noopener">Connecting to GitHub with SSH</a></p>
 

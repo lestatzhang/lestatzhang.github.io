@@ -88,18 +88,18 @@
 
 
 
-<meta name="description" content="Replication Kafka的replication复制机制是其可靠性的保证，即为每个分区数据提供多个副本。 每个Kafka topic包含有多个分区，分区是kafka存储数据的基本单位。==一个分区只能存储在同一个硬盘上==。 Kafka保证每一个分区内的消息的顺序，无论这个分区是在线(available)的还是离线的(unavailable)。 每个分区拥有多个副本，其中一个副本将被指定">
+<meta name="description" content="Replication Kafka的replication复制机制是其可靠性的保证，即为每个分区数据提供多个副本。  每个Kafka topic包含有多个分区，分区是kafka存储数据的基本单位。==一个分区只能存储在同一个硬盘上==。  Kafka保证每一个分区内的消息的顺序，无论这个分区是在线(available)的还是离线的(unavailable)。  每个分区拥有多个副本，其中一个副本将">
 <meta name="keywords" content="Kafka">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于Kafka Replication机制">
-<meta property="og:url" content="http://yoursite.com/2019/03/11/关于Kafka Replication机制/index.html">
+<meta property="og:url" content="https://lestatzhang.com/2019/03/11/关于Kafka Replication机制/index.html">
 <meta property="og:site_name" content="Lestat.Z">
-<meta property="og:description" content="Replication Kafka的replication复制机制是其可靠性的保证，即为每个分区数据提供多个副本。 每个Kafka topic包含有多个分区，分区是kafka存储数据的基本单位。==一个分区只能存储在同一个硬盘上==。 Kafka保证每一个分区内的消息的顺序，无论这个分区是在线(available)的还是离线的(unavailable)。 每个分区拥有多个副本，其中一个副本将被指定">
+<meta property="og:description" content="Replication Kafka的replication复制机制是其可靠性的保证，即为每个分区数据提供多个副本。  每个Kafka topic包含有多个分区，分区是kafka存储数据的基本单位。==一个分区只能存储在同一个硬盘上==。  Kafka保证每一个分区内的消息的顺序，无论这个分区是在线(available)的还是离线的(unavailable)。  每个分区拥有多个副本，其中一个副本将">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-03-11T07:58:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于Kafka Replication机制">
-<meta name="twitter:description" content="Replication Kafka的replication复制机制是其可靠性的保证，即为每个分区数据提供多个副本。 每个Kafka topic包含有多个分区，分区是kafka存储数据的基本单位。==一个分区只能存储在同一个硬盘上==。 Kafka保证每一个分区内的消息的顺序，无论这个分区是在线(available)的还是离线的(unavailable)。 每个分区拥有多个副本，其中一个副本将被指定">
+<meta name="twitter:description" content="Replication Kafka的replication复制机制是其可靠性的保证，即为每个分区数据提供多个副本。  每个Kafka topic包含有多个分区，分区是kafka存储数据的基本单位。==一个分区只能存储在同一个硬盘上==。  Kafka保证每一个分区内的消息的顺序，无论这个分区是在线(available)的还是离线的(unavailable)。  每个分区拥有多个副本，其中一个副本将">
 
 
 
@@ -129,7 +129,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/11/关于Kafka Replication机制/">
+  <link rel="canonical" href="https://lestatzhang.com/2019/03/11/关于Kafka Replication机制/">
 
 
 
@@ -314,7 +314,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/11/关于Kafka Replication机制/">
+    <link itemprop="mainEntityOfPage" href="https://lestatzhang.com/2019/03/11/关于Kafka Replication机制/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lestat Zhang">
@@ -456,15 +456,22 @@
 
       
         <h3 id="Replication"><a href="#Replication" class="headerlink" title="Replication"></a>Replication</h3><ul>
-<li>Kafka的replication复制机制是其可靠性的保证，即为每个分区数据提供多个副本。</li>
-<li>每个Kafka topic包含有多个分区，分区是kafka存储数据的基本单位。==一个分区只能存储在同一个硬盘上==。</li>
-<li>Kafka保证每一个分区内的消息的顺序，无论这个分区是在线(available)的还是离线的(unavailable)。</li>
-<li>每个分区拥有多个副本，其中一个副本将被指定为主副本(leader replicas)，其余的为跟随副本(follower)</li>
-<li>==所有的消息都会写入到主副本，所有的消息都从主要副本读取==，其他的副本只需要保持于主副本同步即可</li>
-<li>当主副本离线时，其他的副本中的一个将会被推选为新的主副本（一般为该分区副本列表的下一个副本）</li>
+<li><p>Kafka的replication复制机制是其可靠性的保证，即为每个分区数据提供多个副本。</p>
+</li>
+<li><p>每个Kafka topic包含有多个分区，分区是kafka存储数据的基本单位。==一个分区只能存储在同一个硬盘上==。</p>
+</li>
+<li><p>Kafka保证每一个分区内的消息的顺序，无论这个分区是在线(available)的还是离线的(unavailable)。</p>
+</li>
+<li><p>每个分区拥有多个副本，其中一个副本将被指定为主副本(leader replicas)，其余的为跟随副本(follower)</p>
+</li>
+<li><p>==所有的消息都会写入到主副本，所有的消息都从主要副本读取==，其他的副本只需要保持于主副本同步即可</p>
+</li>
+<li><p>当主副本离线时，其他的副本中的一个将会被推选为新的主副本（一般为该分区副本列表的下一个副本）</p>
+</li>
 <li><p>关于副本是否处于“同步中(in-sync)”的状态的判断标准：</p>
 <ul>
-<li>如果它是主副本，那么它是处于“同步中(in-sync)”的状态。</li>
+<li><p>如果它是主副本，那么它是处于“同步中(in-sync)”的状态。</p>
+</li>
 <li><p>如果它是跟随副本， 且拥有以下状态，那么它处于“同步中(in-sync)”：</p>
 <ul>
 <li>它与zookeeper有一个可用的session（在最近6秒内给zk发送过心跳）</li>
@@ -475,7 +482,8 @@
 </li>
 </ul>
 </li>
-<li>当一个同步中的副本出现延迟时，它会影响生产者和消费者的性能。因为只有在所有跟随副本同步完所有消息并且提交后，它们才会继续执行。</li>
+<li><p>当一个同步中的副本出现延迟时，它会影响生产者和消费者的性能。因为只有在所有跟随副本同步完所有消息并且提交后，它们才会继续执行。</p>
+</li>
 </ul>
 
       

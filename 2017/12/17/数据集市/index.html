@@ -92,16 +92,16 @@
 <meta name="keywords" content="DWH">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据仓库笔记 —— 数据集市">
-<meta property="og:url" content="http://yoursite.com/2017/12/17/数据集市/index.html">
+<meta property="og:url" content="https://lestatzhang.com/2017/12/17/数据集市/index.html">
 <meta property="og:site_name" content="Lestat.Z">
 <meta property="og:description" content="数据集市数据集市的概念数据集市是数据仓库的一种简单形式，通常由组织内的业务部门自己建立和控制。一个数据集市面向单一主题域，如销售、财务、市场等。数据集市的数据源可以是操作型系统(独立数据集市)，也可以是企业级数据仓库(从属数据集市)。 数据集市与数据仓库的区别不同于数据集市，数据仓库处理整个组织范围内的多个主题域，通常是由组织内的核心单位，如IT部门承建，所以经常被称为中心数据仓库或企业数据仓库。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2017/12/17/数据集市/20190529145216578.png">
+<meta property="og:image" content="https://lestatzhang.com/2017/12/17/数据集市/20190529145216578.png">
 <meta property="og:updated_time" content="2017-12-17T06:05:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据仓库笔记 —— 数据集市">
 <meta name="twitter:description" content="数据集市数据集市的概念数据集市是数据仓库的一种简单形式，通常由组织内的业务部门自己建立和控制。一个数据集市面向单一主题域，如销售、财务、市场等。数据集市的数据源可以是操作型系统(独立数据集市)，也可以是企业级数据仓库(从属数据集市)。 数据集市与数据仓库的区别不同于数据集市，数据仓库处理整个组织范围内的多个主题域，通常是由组织内的核心单位，如IT部门承建，所以经常被称为中心数据仓库或企业数据仓库。">
-<meta name="twitter:image" content="http://yoursite.com/2017/12/17/数据集市/20190529145216578.png">
+<meta name="twitter:image" content="https://lestatzhang.com/2017/12/17/数据集市/20190529145216578.png">
 
 
 
@@ -131,7 +131,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/12/17/数据集市/">
+  <link rel="canonical" href="https://lestatzhang.com/2017/12/17/数据集市/">
 
 
 
@@ -316,7 +316,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/17/数据集市/">
+    <link itemprop="mainEntityOfPage" href="https://lestatzhang.com/2017/12/17/数据集市/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lestat Zhang">
@@ -459,7 +459,8 @@
       
         <h3 id="数据集市"><a href="#数据集市" class="headerlink" title="数据集市"></a>数据集市</h3><h4 id="数据集市的概念"><a href="#数据集市的概念" class="headerlink" title="数据集市的概念"></a>数据集市的概念</h4><p>数据集市是数据仓库的一种简单形式，通常由组织内的业务部门自己建立和控制。一个数据集市面向单一主题域，如销售、财务、市场等。数据集市的数据源可以是操作型系统(独立数据集市)，也可以是企业级数据仓库(从属数据集市)。</p>
 <h4 id="数据集市与数据仓库的区别"><a href="#数据集市与数据仓库的区别" class="headerlink" title="数据集市与数据仓库的区别"></a>数据集市与数据仓库的区别</h4><p>不同于数据集市，数据仓库处理整个组织范围内的多个主题域，通常是由组织内的核心单位，如IT部门承建，所以经常被称为中心数据仓库或企业数据仓库。数据仓库需要集成很多操作型源系统中的数据。由于数据集市的复杂度和需要处理的数据都小于数据仓库，因此更容易建立与维护。表2-19总结了数据仓库与数据集市的主要区别。</p>
-<p><img src="./20190529145216578.png" alt></p>
+<img src="./20190529145216578.png" alt>
+
 <h4 id="数据集市设计"><a href="#数据集市设计" class="headerlink" title="数据集市设计"></a>数据集市设计</h4><p>数据集市主要用于部门级别的分析型应用，数据大都是经过了汇总和聚合操作，粒度级别较高。数据集市一般采用维度模型设计方法，数据结构使用星型模式或雪花模式。 正如前面所介绍的，设计维度模型先要确定维度表、事实表和数据粒度级别，下一步是使用主外键定义事实表和维度表之间的关系。数据集市中的主键最好使用系统生成的自增的单列数字型代理键。模型建立好之后，设计ETL步骤抽取操作型源系统的数据，经过数据清洗和转换，最终装载进数据集市中的维度表和事实表中。</p>
 <h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p>[Book]Hadoop构建数据仓库实践, 第2章第4节 —— 数据集市</p>
 
