@@ -251,6 +251,16 @@
           </a>
         </li>
       
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            站点地图
+          </a>
+        </li>
+      
 
       
         <li class="menu-item menu-item-search">
@@ -459,7 +469,7 @@
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>之前本来有一个个人博客，但是因为太懒没有维护，就来投奔CSDN了。这几天突然一时兴起，让好好弄一下自己的个人博客，因为CSDN的广告实在是....一言难尽...
 搜索了一般，选取一个比较简单的实现方式：即Hexo+GitHub Pages
-以下记录如果搭建个人博客网站 <a href="https://lestatzhang.com/" target="_blank" rel="noopener">lestatzhang.com</a>的过程</p>
+以下记录如果搭建个人博客网站 <a href="https://lestatzhang.com/">lestatzhang.com</a>的过程</p>
 <h2 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h2><ol>
 <li>安装Git</li>
 <li>安装Node.js</li>
@@ -522,10 +532,10 @@
 <p>然后重新生成站点文件,并查看</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g  </span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
 
-<h3 id="Godaddy购买个人域名"><a href="#Godaddy购买个人域名" class="headerlink" title="Godaddy购买个人域名"></a>Godaddy购买个人域名</h3><p>在Godday上买了一个自己的域名 <a href="https://lestatzhang.com/" target="_blank" rel="noopener">lestatzhang.com</a></p>
+<h3 id="Godaddy购买个人域名"><a href="#Godaddy购买个人域名" class="headerlink" title="Godaddy购买个人域名"></a>Godaddy购买个人域名</h3><p>在Godday上买了一个自己的域名 <a href="https://lestatzhang.com/">lestatzhang.com</a></p>
 <h3 id="绑定个人域名"><a href="#绑定个人域名" class="headerlink" title="绑定个人域名"></a>绑定个人域名</h3><p>Godaddy的配置可以参考如下图片
 <img src="./godadday.png" alt></p>
-<p>然后在next主题中source文件夹中创建CNAME文件，然后将个人域名 <a href="https://lestatzhang.com/" target="_blank" rel="noopener">lestatzhang.com</a>添加进CNAME之后重新部署网站。</p>
+<p>然后在next主题中source文件夹中创建CNAME文件，然后将个人域名 <a href="https://lestatzhang.com/">lestatzhang.com</a>添加进CNAME之后重新部署网站。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd themes/next/source/</span><br><span class="line">echo "lestatzhang.com" &gt; CNAME</span><br><span class="line">cd ../../../'</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
 
 <h3 id="TO-DO"><a href="#TO-DO" class="headerlink" title="TO-DO"></a>TO-DO</h3><p>具体博客搭建的步骤就这些了，后面主要是如何对网站页面/主题进行优化的过程。 TO-DO</p>
