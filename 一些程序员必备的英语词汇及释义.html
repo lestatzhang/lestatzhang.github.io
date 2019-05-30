@@ -1,0 +1,1559 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-loading-bar.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="vrXUBBtmbBaV-tMV6mZQTbvFSghFp5K0LjEEwUAiuVc">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/carrot-32x32.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/fcarrot-16x16.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="前言看书整理的时候遇到一些词汇不知道怎么翻译成中文好，于是整理了一些词汇解释的笔记，整理成如下词汇表  词汇表angle brackets             尖括号             iterate over             迭代         array buffers&amp;nbsp;             数组缓冲             iterator">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一些程序员必备的英语词汇及释义">
+<meta property="og:url" content="https://lestatzhang.com/一些程序员必备的英语词汇及释义.html">
+<meta property="og:site_name" content="Lestat.Z">
+<meta property="og:description" content="前言看书整理的时候遇到一些词汇不知道怎么翻译成中文好，于是整理了一些词汇解释的笔记，整理成如下词汇表  词汇表angle brackets             尖括号             iterate over             迭代         array buffers&amp;nbsp;             数组缓冲             iterator">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-03-02T02:07:25.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="一些程序员必备的英语词汇及释义">
+<meta name="twitter:description" content="前言看书整理的时候遇到一些词汇不知道怎么翻译成中文好，于是整理了一些词汇解释的笔记，整理成如下词汇表  词汇表angle brackets             尖括号             iterate over             迭代         array buffers&amp;nbsp;             数组缓冲             iterator">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://lestatzhang.com/一些程序员必备的英语词汇及释义.html">
+
+
+
+
+
+  <title>一些程序员必备的英语词汇及释义 | Lestat.Z</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Lestat.Z</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-favorite">
+          <a href="/favorite/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heart"></i> <br>
+            
+            喜欢
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://lestatzhang.com/一些程序员必备的英语词汇及释义.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lestat Zhang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lestat.Z">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">一些程序员必备的英语词汇及释义</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-02T10:07:25+08:00">
+                2019-03-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/一些程序员必备的英语词汇及释义.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/一些程序员必备的英语词汇及释义.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/一些程序员必备的英语词汇及释义.html" class="leancloud_visitors" data-flag-title="一些程序员必备的英语词汇及释义">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  608
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>看书整理的时候遇到一些词汇不知道怎么翻译成中文好，于是整理了一些词汇解释的笔记，整理成如下词汇表</p>
+
+<h4 id="词汇表"><a href="#词汇表" class="headerlink" title="词汇表"></a>词汇表</h4><div class="table-box"><table cellspacing="0"><tbody><tr><td style="vertical-align:bottom;width:120pt;"><span style="color:#000000;">angle brackets</span></td>
+            <td style="vertical-align:bottom;width:80pt;"><span style="color:#000000;">尖括号</span></td>
+            <td style="vertical-align:bottom;width:65pt;"><span style="color:#000000;">iterate over</span></td>
+            <td style="vertical-align:bottom;width:65pt;"><span style="color:#000000;">迭代</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">array buffers&nbsp;</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">数组缓冲</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">iterator</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">迭代器</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">asynchronous</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">异步的</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">jump tables</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">跳转表</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">atom</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">原子</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">lexers</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">词法分析器</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">auxiliary constructors</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">辅助构造器</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">lexical analysis</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">词法分析</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">backslashes</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">反斜杠</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">linked list</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">链表</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">backtracking</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">回溯</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">listeners</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">监听器</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">base class</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">基类</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">markup&nbsp;</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">标记</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">blocking</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">阻塞的</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">multiple inheritance</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">多重继承</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">call-by-name</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">传名调用</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">mutators</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">改值器</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">call-by-value</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">传值调用</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">namespace</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">命名空间</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">case classes</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">样例类</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">nested</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">嵌套的</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">case objects</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">样例对象</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">notation</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">表示法</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">checked exception</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">受检异常</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">overflow</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">溢出</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">closure</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">闭包</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">override</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">重写/覆盖</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">companion classes</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">伴生类</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">parser trees</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">解析树</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">companion objects</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">伴生对象</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">partial functions</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">偏函数</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">compile-time</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">编译期的</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">partially applied functions</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">部分应用函数</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">comprehensions</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">推导式</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">pass-by-name</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">传名的</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">concurrency</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">并发</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">pattern matching</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">模式匹配</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">consistency</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">一致性</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">polymorphism</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">多态</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">contravariant</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">逆变的</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">primary constructors</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">主构造器</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">control flow</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">控制流转</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">procedures</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">过程</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">covariant</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">协变的</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">processes</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">进程</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">currying</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">柯里化</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">projection</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">投影</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">deadlocks</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">死锁</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">properties</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">属性</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">delimited continuation</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">定界延续</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">ragged</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">不规则的</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">dependency injection</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">依赖注入</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">random access</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">随机访问</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">deprecated</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">已过时的</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">recursive</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">递归的</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">destructors</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">析构器</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">reference types</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">引用类型</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">discard</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">丢弃</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">reflective calls</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">反射调用</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">domain-specific languages</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">领域特定语言</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">regex</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">正则</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">duck typing</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">鸭子类型</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">regular expression</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">正则表达式</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">dynamically typed languages</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">动态类型语言</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">runtime</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">运行时的</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">elitable</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">可省略的</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">sealed class</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">密封类</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">embedded</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">内嵌的</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">selectors</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">选取器</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">enumerations</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">枚举</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">self types</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">自身类型</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">evaluate</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">求值</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">self-closing tags</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">自结束的标签</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">exhaustive</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">穷举的</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">serialization</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">序列化</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">explicit</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">显式的</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">singleton</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">单例</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">extractors</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">提取器</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">square brackets</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">方括号</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">family polymorphism</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">家族多态</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">stack</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">栈</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">for comprehension</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">for 推导式</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">structural types</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">结构类型</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">form</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">范式</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">subclass</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">子类</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">generators</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">生成器</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">superclasses</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">超类</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">generics</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">泛型</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">supertypes</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">超类型</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">hash maps</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">哈希映射</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">synchronous</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">同步的</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">hash tables</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">哈希表</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">syntactic sugar</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">语法糖</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">heterogenerous</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">异构的</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">tab completion</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">Tab键补全</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">higher-kinded types</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">高等类型</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">tail recursive</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">尾递归</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">higher-order functions</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">高阶函数</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">threads</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">线程</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">immutable</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">不可变的</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">transient</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">瞬态的</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">implement</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">实现</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">tuples</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">元祖</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">implicit</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">隐式的</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">typesafe</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">类型安全的</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">implicit conversion</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">隐式转换</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">unary</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">一元的</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">implicit parameters</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">隐式参数</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">unevaluated</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">为求值得</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">inference</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">推断</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">volatile</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">易失的</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">instance</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">实例</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">wildcards</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">通配符</span></td>
+        </tr><tr><td style="vertical-align:bottom;"><span style="color:#000000;">invoke</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">执行/调用</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">warppers</span></td>
+            <td style="vertical-align:bottom;"><span style="color:#000000;">包装</span></td>
+        </tr></tbody></table></div>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Lestat Zhang 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/ETL工具Talend最佳实践.html" rel="next" title="ETL工具Talend最佳实践">
+                <i class="fa fa-chevron-left"></i> ETL工具Talend最佳实践
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/关于Kafka Replication机制.html" rel="prev" title="关于Kafka Replication机制">
+                关于Kafka Replication机制 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Lestat Zhang">
+            
+              <center><p class="site-author-name" itemprop="name"><b>Lestat Zhang</b></p></center>
+              <center><p class="site-description motion-element" itemprop="description"></p></center>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/lestatzhang" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://blog.csdn.net/yolohohohoho" target="_blank" title="CSDN">
+                      
+                        <i class="fa fa-fw fa-heartbeat"></i>CSDN</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#词汇表"><span class="nav-number">2.</span> <span class="nav-text">词汇表</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Lestat Zhang</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">32.8k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'lWucvKykdLh626lOFv5xNWeq-gzGzoHsz',
+        appKey: 'X7Pho2N7qKrGlAMu8OFYDsLf',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("lWucvKykdLh626lOFv5xNWeq-gzGzoHsz", "X7Pho2N7qKrGlAMu8OFYDsLf");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
