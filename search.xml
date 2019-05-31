@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>记录一个看着比较顺眼的blockquote的css装饰</title>
+      <link href="/2019/05/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%AA%E7%9C%8B%E7%9D%80%E6%AF%94%E8%BE%83%E9%A1%BA%E7%9C%BC%E7%9A%84blockquote%E7%9A%84css%E8%A3%85%E9%A5%B0.html"/>
+      <url>/2019/05/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%AA%E7%9C%8B%E7%9D%80%E6%AF%94%E8%BE%83%E9%A1%BA%E7%9C%BC%E7%9A%84blockquote%E7%9A%84css%E8%A3%85%E9%A5%B0.html</url>
+      
+        <content type="html"><![CDATA[<p>代码如下</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">blockquote</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">10px</span> <span class="number">15px</span> <span class="number">10px</span> <span class="number">60px</span>;</span><br><span class="line">    <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">    <span class="attribute">font-style</span>: italic;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#f5f5f5</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#777777</span>;</span><br><span class="line">    <span class="attribute">border-left</span>: <span class="number">4px</span> solid <span class="number">#9dd4ff</span>;</span><br><span class="line">    <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">2px</span> <span class="number">4px</span> <span class="built_in">rgba</span>(0, 0, 0, 0.14);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">blockquote</span><span class="selector-pseudo">:before</span>&#123;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">15px</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">15px</span>;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">"\f10d"</span>;</span><br><span class="line">    <span class="attribute">font-family</span>: FontAwesome;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#9dd4ff</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">30px</span>;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">1</span>;</span><br><span class="line">    <span class="attribute">font-weight</span>: <span class="number">900</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">blockquote</span> <span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">7px</span> <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">1.7</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">blockquote</span> <span class="selector-tag">cite</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">text-align</span>: right;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#888888</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">0.9em</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>具体样式如下：<img src="/2019/05/记录一个看着比较顺眼的blockquote的css装饰/./20190531233330978.png" alt></p><p>参考资料：<a href="https://saruwakakun.com/html-css/reference/blockquote" target="_blank" rel="noopener">CSSで作る！魅力的な引用デザインのサンプル30（blockquote）</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> css </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> blockquote </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Mac上如何使用SSH连接到GitHub</title>
       <link href="/2019/05/Mac%E4%B8%8A%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8SSH%E8%BF%9E%E6%8E%A5%E5%88%B0GitHub.html"/>
       <url>/2019/05/Mac%E4%B8%8A%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8SSH%E8%BF%9E%E6%8E%A5%E5%88%B0GitHub.html</url>
