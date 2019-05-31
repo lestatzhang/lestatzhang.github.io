@@ -2045,7 +2045,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #6b0a4a;
+  background: #09c844;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3212,4 +3212,17 @@ img:hover {
   .post-body {
     text-align: justify;
   }
+}
+blockquote {
+  font-family: Microsoft YaHei;
+  font-size: 16px;
+  font-style: italic;
+  width: 500px;
+  margin: 0.25em 0;
+  padding: 0.25em 40px;
+  line-height: 1.45;
+  position: relative;
+  color: #383838;
+  border: 3px dashed #c1c1c1;
+  background: #fff;
 }
