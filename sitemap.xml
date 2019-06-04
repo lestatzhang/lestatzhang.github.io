@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://lestatzhang.com/2019/05/%E5%A6%82%E4%BD%95%E5%9C%A8python(pyspark)%E4%B8%AD%E8%B0%83%E7%94%A8Scala%E6%88%96Java%E7%BC%96%E5%86%99%E7%9A%84UDF.html</loc>
+    
+    <lastmod>2019-06-04T12:57:28.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://lestatzhang.com/2019/05/%E5%A6%82%E4%BD%95%E5%9C%A8pyspark%E4%B8%AD%E4%B8%8EHDFS%E4%BA%A4%E4%BA%92.html</loc>
     
     <lastmod>2019-06-04T12:55:35.000Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>https://lestatzhang.com/2019/05/%E5%85%B3%E4%BA%8Eorg.apache.spark.deploy.SparkSubmitArguments.html</loc>
     
     <lastmod>2019-06-04T12:54:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lestatzhang.com/2019/06/%E5%A6%82%E4%BD%95%E5%9C%A8python(pyspark)%E4%B8%AD%E8%B0%83%E7%94%A8Scala%E6%88%96Java%E7%BC%96%E5%86%99%E7%9A%84UDF.html</loc>
-    
-    <lastmod>2019-06-04T12:54:25.000Z</lastmod>
     
   </url>
   
