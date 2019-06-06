@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>整理一些HBase相关的文章</title>
+      <link href="/2019/06/%E6%95%B4%E7%90%86%E4%B8%80%E4%BA%9BHBase%E7%9B%B8%E5%85%B3%E7%9A%84%E6%96%87%E7%AB%A0.html"/>
+      <url>/2019/06/%E6%95%B4%E7%90%86%E4%B8%80%E4%BA%9BHBase%E7%9B%B8%E5%85%B3%E7%9A%84%E6%96%87%E7%AB%A0.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>学习HBase过程中搜集的的一些文章，整理如下。</p><h2 id="文章列表"><a href="#文章列表" class="headerlink" title="文章列表"></a>文章列表</h2><ol><li><a href="http://kentt.top/2018/05/17/HBase-1/" target="_blank" rel="noopener">HBase入门 – 数据模型</a></li><li><a href="http://kentt.top/2018/05/27/HBase-2/" target="_blank" rel="noopener">HBase入门  – 组件</a></li><li><a href="http://kentt.top/2018/05/30/HBase-3/" target="_blank" rel="noopener">HBase入门  – 读写与删除原理</a></li><li><a href="http://kentt.top/2018/07/18/HBase-4/" target="_blank" rel="noopener">HBase入门  – 压缩、分裂与故障恢复</a></li><li><a href="http://hbasefly.com/2016/04/03/hbase_hfile_index/" target="_blank" rel="noopener">HBase原理– 探索HFile索引机制</a></li><li><a href="http://hbasefly.com/2016/03/23/hbase-memstore-flush/" target="_blank" rel="noopener">HBase原理 – Memstore Flush深度解析</a></li><li><a href="http://hbasefly.com/2016/12/21/hbase-getorscan/" target="_blank" rel="noopener">HBase原理－数据读取流程解析</a></li><li><a href="http://hbasefly.com/2017/06/11/hbase-scan-2/" target="_blank" rel="noopener">HBase原理－迟到的‘数据读取流程’部分细节</a></li><li><a href="http://hbasefly.com/2016/03/23/hbase_writer/" target="_blank" rel="noopener">HBase原理－数据写入流程解析</a></li><li><a href="http://hbasefly.com/2017/08/27/hbase-split/" target="_blank" rel="noopener">HBase原理 – 所有Region切分的细节都在这里了</a> </li><li><a href="http://hbasefly.com/2016/11/11/hbase%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%EF%BC%8D%E8%AF%BB%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E7%AD%96%E7%95%A5/" target="_blank" rel="noopener">HBase最佳实践－读性能优化策略</a></li><li><a href="http://hbasefly.com/2016/12/10/hbase-parctice-write/" target="_blank" rel="noopener">HBase最佳实践－写性能优化策略</a></li><li><a href="http://hbasefly.com/2017/10/29/hbase-scan-3/" target="_blank" rel="noopener">HBase最佳实践 – Scan用法大观园</a></li><li><a href="https://blog.csdn.net/alphags/article/details/53786777" target="_blank" rel="noopener">HBase最佳实践 – rowkey设计实现多条件查询</a></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> Hadoop Eco. </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> HBase </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>记录一个看着比较顺眼的blockquote的css装饰</title>
       <link href="/2019/05/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%AA%E7%9C%8B%E7%9D%80%E6%AF%94%E8%BE%83%E9%A1%BA%E7%9C%BC%E7%9A%84blockquote%E7%9A%84css%E8%A3%85%E9%A5%B0.html"/>
       <url>/2019/05/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%AA%E7%9C%8B%E7%9D%80%E6%AF%94%E8%BE%83%E9%A1%BA%E7%9C%BC%E7%9A%84blockquote%E7%9A%84css%E8%A3%85%E9%A5%B0.html</url>
