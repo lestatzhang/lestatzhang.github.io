@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>在pymongo中如何将数据提取到有序字典OrderedDict里面</title>
+      <link href="/2019/06/%E5%9C%A8pymongo%E4%B8%AD%E5%A6%82%E4%BD%95%E5%B0%86%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96%E5%88%B0%E6%9C%89%E5%BA%8F%E5%AD%97%E5%85%B8OrderedDict%E9%87%8C%E9%9D%A2.html"/>
+      <url>/2019/06/%E5%9C%A8pymongo%E4%B8%AD%E5%A6%82%E4%BD%95%E5%B0%86%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96%E5%88%B0%E6%9C%89%E5%BA%8F%E5%AD%97%E5%85%B8OrderedDict%E9%87%8C%E9%9D%A2.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>项目需要在原有的旧表里面添加一个新字段然后插入有一个新表里面，同时需要保持原有其他字段的顺序，如果直接使用pymongo读取的话，每一条document是存到到dict数据类型里面的，不能保证key的顺序。如果想保证key的顺序，就需要将数据存储到有序字典，也就是OrderedDict里面。搜索了一番，发现bson里面有更方便的方法，即使使用SON对象，例子如下：</p><h2 id="代码范例"><a href="#代码范例" class="headerlink" title="代码范例"></a>代码范例</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> bson.codec_options <span class="keyword">import</span> CodecOptions</span><br><span class="line"><span class="keyword">from</span> bson.son <span class="keyword">import</span> SON</span><br><span class="line"><span class="keyword">import</span> pymongo <span class="keyword">as</span> pm</span><br><span class="line">client = pm.MongoClient(<span class="string">'mongodb://user:password@127.0.0.1:27017, ssl=True, ssl_ca_certs='</span>/tmp/mongo_local.pem<span class="string">')</span></span><br><span class="line"><span class="string">db = client['</span>my_d<span class="string">b']</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">opts = CodecOptions(document_class=SON)</span></span><br><span class="line"><span class="string">collection = db['</span>my_collection<span class="string">'].with_options(codec_options=opts)</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> mongodb </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> OrderedDict </tag>
+            
+            <tag> pymongo </tag>
+            
+            <tag> bson </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>整理一些HBase相关的文章</title>
       <link href="/2019/06/%E6%95%B4%E7%90%86%E4%B8%80%E4%BA%9BHBase%E7%9B%B8%E5%85%B3%E7%9A%84%E6%96%87%E7%AB%A0.html"/>
       <url>/2019/06/%E6%95%B4%E7%90%86%E4%B8%80%E4%BA%9BHBase%E7%9B%B8%E5%85%B3%E7%9A%84%E6%96%87%E7%AB%A0.html</url>
