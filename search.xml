@@ -4,7 +4,32 @@
   
     
     <entry>
-      <title></title>
+      <title>NDM的网络配置文件netmap.cfg</title>
+      <link href="/2019/06/NDM%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6netmap.cfg.html"/>
+      <url>/2019/06/NDM%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6netmap.cfg.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>NDM的网络映射包含描述<strong>本地节点</strong>和网络中的<strong>远程节点</strong>的连接信息。 为本地节点与之通信的每个节点创建一个远程节点信息记录。</p><p>网络映射文件位于<strong>d_dir/ndm/cfg/cd_node/netmap.cfg</strong>中，其中d_dir是安装Sterling Connect：Direct®的位置，cd_node是节点名称。</p><p>如果使用TC/IP，则本地节点可以与远程节点通信，而无需远程节点信息记录。 在submit命令或Process语句中指定所需的连接信息。</p><p>以下示例显示了TCP/IP连接的网络映射远程节点条目以及与远程节点的Sun LU6.2连接。 要在网络映射中插入有关字段的注释，请确保在第一列中放置＃。 如果＃不在第一列中，则不会忽略注释并读取该字段。</p><h2 id="实例文件"><a href="#实例文件" class="headerlink" title="实例文件"></a>实例文件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> Sample Network Map remote node entry for a TCP/IP connection</span><br><span class="line"> remote.customer.node:\</span><br><span class="line">   :conn.retry.stwait=00.00.30:\</span><br><span class="line">   :conn.retry.stattempts=3:\</span><br><span class="line">   :conn.retry.ltwait=00.10.00:\</span><br><span class="line">   :conn.retry.ltattempts=6:\</span><br><span class="line">  :tcp.max.time.to.wait=180;\</span><br><span class="line">  :runstep.max.time.to.wait=0:\</span><br><span class="line">   :contact.name=:\</span><br><span class="line">   :contact.phone=:\</span><br><span class="line">   :descrip=:\</span><br><span class="line">   :sess.total=255:\</span><br><span class="line">   :sess.pnode.max=255:\</span><br><span class="line">   :sess.snode.max=255:\</span><br><span class="line">   :sess.default=1:\</span><br><span class="line">   :comm.info=10.20.246.49;9974:\</span><br><span class="line">   :comm.transport=tcp:\</span><br><span class="line">   :comm.bufsize=65536:\</span><br><span class="line">   :pacing.send.delay=0:\</span><br><span class="line">   :pacing.send.count=0:</span><br><span class="line"><span class="meta"> #</span> Sample Network Map remote node entry for a Sun LU6.2 connection</span><br><span class="line"><span class="meta"> #</span> hostl1 is the profile name</span><br><span class="line"> MVS.SAM1.NODE:\</span><br><span class="line">   :conn.retry.stwait=00.00.30:\</span><br><span class="line">   :conn.retry.stattempts=3:\</span><br><span class="line">   :conn.retry.ltwait=00.10.00:\</span><br><span class="line">   :conn.retry.ltattempts=6:\</span><br><span class="line">   :contact.name=:\</span><br><span class="line">   :contact.phone=:\</span><br><span class="line">   :descrip=:\</span><br><span class="line">   :sess.total=255:\</span><br><span class="line">   :sess.pnode.max=128:\</span><br><span class="line">   :sess.snode.max=127:\</span><br><span class="line">   :sess.default=1:\</span><br><span class="line">   :comm.info=hostl1:\</span><br><span class="line">   :comm.transport=blklu62:\</span><br><span class="line">   :comm.bufsize=65536:</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> DWH </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> NDM </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>NDM配置文件</title>
       <link href="/2019/06/NDM%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6.html"/>
       <url>/2019/06/NDM%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6.html</url>
       
