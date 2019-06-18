@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title></title>
+      <link href="/2019/06/NDM%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6.html"/>
+      <url>/2019/06/NDM%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6.html</url>
+      
+        <content type="html"><![CDATA[<p>NDM的配置文件用来定义其操作环境的。 在自定义过程中，用户需要创建以下配置文件：</p><ul><li>初始化参数文件<strong>initparm.cfg</strong></li><li>客户端配置参数文件</li><li>网络地图文件<strong>netmap.cfg</strong></li><li>两个访问文件：<strong>userfile.cfg</strong>和<strong>sysacl.cfg</strong></li></ul><p>初始自定义后，你可以根据需要修改这些文件。</p><p>配置文件是由记录组成的文本文件。 记录是单个逻辑行。 逻辑行是可以使用反斜杠（ <strong>\</strong> ）字符继续的一个或多个物理行。 在下面的例子中， 第5行以反斜杠（ <strong>\</strong> ）字符结尾，表示该行在下一个物理行上继续。 例子的第1行以井号（ <strong>＃</strong> ）开头。 英镑符号表示此行包含注释。</p><p>记录由记录名称和一个或多个参数对组成。 参数对是参数名称和参数值。 第2行包含记录名称ndm.path。 第2行还包含参数对，path和/ndm/users/c，其中参数名称为path，参数值为/ndm/users/c。 参数对由冒号( <strong>:</strong> )绑定，并以等号（ <strong>=</strong> ）分隔。</p><blockquote><p>记录名称和参数名称<strong>不区分大小写</strong>。 <strong>参数值区分大小写</strong>。</p></blockquote><p>第7行到第23行说明了较长的逻辑记录。 第7行包含记录名local.node，后跟可选的冒号（:)和反斜杠（\）字符。 7到23之间的所有行都以反斜杠（\）字符结尾。 第23行不包含反斜杠（\）字符，表示记录的结尾。</p><table><thead><tr><th>Line</th><th>Contents</th><th>Notes</th></tr></thead><tbody><tr><td>1</td><td>#Miscellaneous</td><td>Parameters    # indicates a comment</td></tr><tr><td>2</td><td>ndm.path:path=/ndm/users/c:</td><td>record name=ndm.path, parameter=path, value= /ndm/users/c</td></tr><tr><td>3</td><td>proc.prio:default=8:</td><td>record name=proc.prio, parameter=default, value= 8</td></tr><tr><td>6</td><td>#Local Sterling Connect:Direct connection information</td><td># indicates a comment</td></tr><tr><td>7</td><td>local.node:\</td><td>record name=local.node</td></tr><tr><td>13</td><td>.</td><td></td></tr><tr><td>. . .</td><td>.</td><td></td></tr><tr><td>21</td><td>.</td><td></td></tr><tr><td>22</td><td>:tcp.api=rusty;3191:\</td><td>parameter= tcp.api, value= rusty;3191</td></tr><tr><td>23</td><td>:tcp.api.bufsize=32768:</td><td>parameter= tcp.api.bufsize, value= 32768</td></tr></tbody></table><blockquote><p>在某些情况下，配置文件允许重复但不相同的记录。 例如，你可以在初始化参数文件中定义多个远程节点信息（rnode.listen）记录。</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> DWH </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> NDM </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>在pymongo中如何将数据提取到有序字典OrderedDict里面</title>
       <link href="/2019/06/%E5%9C%A8pymongo%E4%B8%AD%E5%A6%82%E4%BD%95%E5%B0%86%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96%E5%88%B0%E6%9C%89%E5%BA%8F%E5%AD%97%E5%85%B8OrderedDict%E9%87%8C%E9%9D%A2.html"/>
       <url>/2019/06/%E5%9C%A8pymongo%E4%B8%AD%E5%A6%82%E4%BD%95%E5%B0%86%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96%E5%88%B0%E6%9C%89%E5%BA%8F%E5%AD%97%E5%85%B8OrderedDict%E9%87%8C%E9%9D%A2.html</url>
